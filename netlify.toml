@@ -1,11 +1,10 @@
 [build]
-# Commande SIMPLE : retire complètement l'installation apt-get.
-# On ne fait que rendre le script exécutable et lancer la construction.
+# Commande SIMPLE (la plus efficace maintenant que l'environnement est ciblé)
 command = "chmod +x gradlew && ./gradlew :webTest:jsJar"
 
 publish = "webTest/build/distributions"
 
 [build.environment]
-# Ceci est la clé : dire à Netlify d'utiliser sa version de Java 11 déjà installée.
-JAVA_VERSION = "11"
+# La clé finale : on force la version Java 17 pour Gradle 8.x
+JAVA_VERSION = "17"
 NODE_VERSION = "20"
