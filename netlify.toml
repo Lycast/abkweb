@@ -1,5 +1,5 @@
 [build]
-command = "chmod +x gradlew && ./gradlew jsJar"
+command = "chmod +x gradlew && ./gradlew :webTest:jsBrowserDistribution"
 publish = "webTest/build/distributions"
 
 [build.environment]
