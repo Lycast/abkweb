@@ -1,0 +1,9 @@
+[build]
+# Commande de construction : donne la permission d'exécution puis lance la compilation
+command = "chmod +x gradlew && ./gradlew jsJar"
+# Répertoire de publication : l'endroit où se trouvent les fichiers finaux (index.html)
+publish = "webTest/build/distributions"
+
+[build.environment]
+# Force Netlify à utiliser l'environnement Java 17 (nécessaire pour Gradle et Kotlin)
+JAVA_VERSION = "openjdk-17"
