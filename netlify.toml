@@ -1,7 +1,8 @@
 [build]
-# On affiche les infos de debug, on rend le script executable et on lance le build
-command = "echo 'JAVA DEBUG:' && java -version && chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution"
+# On force JAVA_HOME vers le chemin standard de Java 17 sur l'image Netlify
+command = "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 && export PATH=$JAVA_HOME/bin:$PATH && java -version && chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution"
 publish = "composeApp/build/dist/js/productionExecutable"
 
 [build.environment]
+# On garde ça au cas où, mais la commande au-dessus prendra le dessus
 JAVA_VERSION = "17"
