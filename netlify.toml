@@ -1,6 +1,0 @@
-[build]
-command = "chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution --no-daemon"
-publish = "composeApp/build/dist/js/productionExecutable"
-
-[build.environment]
-JAVA_VERSION = "17"
