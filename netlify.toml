@@ -1,10 +1,8 @@
 [build]
-# Commande SIMPLE (la plus efficace maintenant que l'environnement est ciblé)
-command = "chmod +x gradlew && ./gradlew :webTest:jsJar"
-
+# Exécutez le script shell simple
+command = "./build.sh"
 publish = "webTest/build/distributions"
 
 [build.environment]
-# La clé finale : on force la version Java 17 pour Gradle 8.x
+# On garde la variable pour la robustesse
 JAVA_VERSION = "17"
-NODE_VERSION = "20"
