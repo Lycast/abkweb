@@ -1,3 +1,5 @@
 [build]
-command = "chmod +x gradlew && ./gradlew :webTest:jsJar"
+# Ajout de java -version pour confirmer l'utilisation de Java 17
+command = "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 && export PATH=\"$JAVA_HOME/bin:$PATH\" && java -version && chmod +x gradlew && ./gradlew :webTest:jsJar"
+
 publish = "webTest/build/distributions"
