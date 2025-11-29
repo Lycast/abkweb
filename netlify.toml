@@ -1,16 +1,11 @@
 [build]
-# Nouvelle commande: Installe Java 11, puis donne la permission, puis exécute Gradle.
-# 1. apt-get update & install: Installe OpenJDK 11.
-# 2. java -version: Vérifie l'installation (utile pour le log).
-# 3. chmod +x gradlew: Donne la permission d'exécution.
-# 4. ./gradlew ...: Lance la construction du site.
-command = "apt-get update && apt-get install -y openjdk-11-jdk && java -version && chmod +x gradlew && ./gradlew :webTest:jsJar"
+# Commande SIMPLE : retire complètement l'installation apt-get.
+# On ne fait que rendre le script exécutable et lancer la construction.
+command = "chmod +x gradlew && ./gradlew :webTest:jsJar"
 
-# Le répertoire de publication est correct pour votre projet Compose
 publish = "webTest/build/distributions"
 
 [build.environment]
-# Ces variables ne sont plus nécessaires car nous installons le JDK directement,
-# mais les laisser ne nuira pas.
-JAVA_VERSION = "openjdk-11"
+# Ceci est la clé : dire à Netlify d'utiliser sa version de Java 11 déjà installée.
+JAVA_VERSION = "11"
 NODE_VERSION = "20"
