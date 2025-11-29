@@ -1,8 +1,8 @@
 [build]
-# Exécutez le script shell simple
-command = "./build.sh"
+command = "chmod +x gradlew && ./gradlew :webTest:jsJar"
+
 publish = "webTest/build/distributions"
 
 [build.environment]
-# On garde la variable pour la robustesse
 JAVA_VERSION = "17"
+NODE_VERSION = "20"
