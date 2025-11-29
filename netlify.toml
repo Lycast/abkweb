@@ -1,14 +1,5 @@
 [build]
-# Cette commande cherche un dossier Java 17 ou plus, l'exporte comme JAVA_HOME, puis lance le build
-command = """
-    export JAVA_HOME=$(find /usr/lib/jvm -name "java-17-openjdk-*" -type d | head -n 1) && \
-    [ -z "$JAVA_HOME" ] && export JAVA_HOME=$(find /usr/lib/jvm -name "java-21-openjdk-*" -type d | head -n 1) && \
-    echo "Found JAVA_HOME: $JAVA_HOME" && \
-    export PATH=$JAVA_HOME/bin:$PATH && \
-    java -version && \
-    chmod +x gradlew && \
-    ./gradlew :composeApp:jsBrowserDistribution --no-daemon
-  """
+command = "chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution --no-daemon"
 publish = "composeApp/build/dist/js/productionExecutable"
 
 [build.environment]
