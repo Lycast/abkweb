@@ -1,6 +1,8 @@
 [build]
-command = "chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution"
+# On affiche la version de java pour le debug, on rend le script executable, et on lance le build
+command = "echo 'JAVA VERSION:' && java -version && chmod +x gradlew && ./gradlew :composeApp:jsBrowserDistribution"
 publish = "composeApp/build/dist/js/productionExecutable"
 
 [build.environment]
-JAVA_VERSION = "17"
+# On tente avec la version 21 qui est souvent mieux gérée sur les images récentes
+JAVA_VERSION = "21"
