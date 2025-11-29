@@ -1,6 +1,9 @@
 [build]
-command = "chmod +x gradlew && ./gradlew :webTest:jsBrowserDistribution"
+command = "export JAVA_HOME=$JAVA_11_HOME && chmod +x gradlew && ./gradlew :webTest:jsBrowserDistribution"
+
 publish = "webTest/build/distributions"
 
 [build.environment]
+# Définition de l'environnement, sans la commande "export" ici
 JAVA_VERSION = "openjdk-11"
+NODE_VERSION = "20"
