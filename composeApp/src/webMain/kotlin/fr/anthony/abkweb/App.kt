@@ -78,7 +78,8 @@ fun App() {
                 enter = fadeIn(animationSpec = tween(3000)) + slideInVertically(
                     animationSpec = tween(3000),
                     initialOffsetY = { it / 2 }
-                )
+                ),
+                modifier = Modifier.weight(1f)
             ) {
                 Column(
                     modifier = Modifier
