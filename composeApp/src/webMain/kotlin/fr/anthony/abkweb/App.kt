@@ -63,13 +63,13 @@ fun App() {
         Column {
             Text(
                 text = "Site en cours de développement...",
-                style = MaterialTheme.typography.labelLarge,
-                color = MaterialTheme.colorScheme.onSurface,
+                style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
+                color = Color.Black,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.background)
-                    .padding(vertical = 16.dp)
+                    .background(MaterialTheme.colorScheme.secondary.copy(alpha = 0.5f))
+                    .padding(vertical = 8.dp)
                     .height(IntrinsicSize.Min)
             )
 
