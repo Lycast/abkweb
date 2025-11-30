@@ -115,7 +115,7 @@ fun App() {
                             Spacer(modifier = Modifier.height(48.dp))
 
                             Text(
-                                text = "AB-K Native. Lancement officiel Printemps 2026.",
+                                text = "AB-K Native. Lancement bientôt. Rendez-vous au Printemps 2026.",
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
