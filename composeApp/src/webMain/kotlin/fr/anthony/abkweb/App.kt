@@ -90,7 +90,7 @@ fun App() {
                         Spacer(modifier = Modifier.height(48.dp))
 
                         Text(
-                            text = "Développement d'Applications Métier sur Mesure pour Votre Entreprise.",
+                            text = "Développement d'Applications Métier sur Mesure.",
                             style = MaterialTheme.typography.headlineSmall,
                             color = MaterialTheme.colorScheme.onBackground
                         )
