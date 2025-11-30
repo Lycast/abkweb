@@ -14,9 +14,17 @@ import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
 import abkweb.composeapp.generated.resources.Res
 import abkweb.composeapp.generated.resources.abkalpha
+import abkweb.composeapp.generated.resources.logoalphaupscaled
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.text.selection.SelectionContainer
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
@@ -29,7 +37,23 @@ fun App() {
         isContentVisible = true
     }
 
-    MaterialTheme {
+    // Définition des couleurs extraites de votre carte de visite
+    val deepBlueBackground = Color(0xFF223346) // Le bleu nuit du fond
+    val textWhite = Color(0xFFE0E1DD)          // Un blanc cassé doux pour la lecture
+    val cyanAccent = Color(0xFF4CC9F0)         // Le cyan du logo (pour les titres)
+    val orangeAccent = Color(0xFFFFAB00)       // Le jaune orangé pour l'email
+
+    // On applique un thème sombre personnalisé
+    MaterialTheme(
+        colorScheme = darkColorScheme(
+            background = deepBlueBackground,
+            surface = deepBlueBackground,
+            onBackground = textWhite,
+            onSurface = textWhite,
+            primary = cyanAccent,
+            secondary = orangeAccent
+        )
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -38,46 +62,52 @@ fun App() {
             verticalArrangement = Arrangement.Center
         ) {
             AnimatedVisibility(
-                visible = isContentVisible
+                visible = isContentVisible,
+                enter = fadeIn() + slideInVertically(initialOffsetY = { it / 2 })
             ) {
                 Image(
-                    painterResource(Res.drawable.abkalpha),
+                    painterResource(Res.drawable.logoalphaupscaled),
                     contentDescription = "AB-K Native Logo",
-                    modifier = Modifier.fillMaxWidth(0.8f)
+                    modifier = Modifier
+                        .widthIn(max = 1000.dp)
+                        .fillMaxWidth(0.9f)
                 )
             }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Spacer(modifier = Modifier.height(32.dp))
+            SelectionContainer {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.padding(horizontal = 16.dp)
+                ) {
+                    Spacer(modifier = Modifier.height(48.dp))
 
-                Text(
-                    text = "Développement d'Applications Métier sur Mesure pour Votre Entreprise.",
-                    style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.onBackground
-                )
+                    Text(
+                        text = "Développement d'Applications Métier sur Mesure pour Votre Entreprise.",
+                        style = MaterialTheme.typography.headlineSmall,
+                        color = MaterialTheme.colorScheme.onBackground
+                    )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(16.dp))
 
-                Text(
-                    text = "AB-K Native. Lancement officiel Printemps 2026.",
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Spacer(modifier = Modifier.height(24.dp))
-                Text(
-                    text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Spacer(modifier = Modifier.height(4.dp))
-                Text(
-                    // Adresse e-mail professionnelle (contact@abknative.fr)
-                    text = "contact@abknative.fr",
-                    style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                    color = MaterialTheme.colorScheme.secondary
-                )
+                    Text(
+                        text = "AB-K Native. Lancement officiel Printemps 2026.",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(24.dp))
+                    Text(
+                        text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier = Modifier.height(4.dp))
+                    Text(
+                        // Adresse e-mail professionnelle (contact@abknative.fr)
+                        text = "contact@abknative.fr",
+                        style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                }
             }
         }
     }
