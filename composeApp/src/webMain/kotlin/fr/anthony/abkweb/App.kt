@@ -61,13 +61,13 @@ fun App() {
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
-                    text = "AB-K Native. Lancement officiel de nos services : Printemps 2026.",
+                    text = "AB-K Native. Lancement officiel Printemps 2026.",
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Spacer(modifier = Modifier.height(24.dp))
                 Text(
-                    text = "Vous avez déjà un projet ou des besoins ? Vous pouvez me contacter dès aujourd'hui :",
+                    text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
                     style = MaterialTheme.typography.titleMedium,
                     color = MaterialTheme.colorScheme.onSurface
                 )
