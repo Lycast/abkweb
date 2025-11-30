@@ -18,6 +18,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -59,65 +60,80 @@ fun App() {
             secondary = orangeAccent
         )
     ) {
-
-        AnimatedVisibility(
-            visible = isContentVisible,
-            enter = fadeIn(animationSpec = tween(3000)) + slideInVertically(
-                animationSpec = tween(3000),
-                initialOffsetY = { it / 2 }
-            )
-        ) {
-            Column(
+        Column {
+            Text(
+                text = "Site en cours de développement...",
+                style = MaterialTheme.typography.labelLarge,
+                color = MaterialTheme.colorScheme.onSurface,
+                textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.background)
-                    .verticalScroll(rememberScrollState()),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Image(
-                    painterResource(Res.drawable.logoalphaupscaled),
-                    contentDescription = "AB-K Native Logo",
-                    modifier = Modifier
-                        .widthIn(max = 1000.dp)
-                        .fillMaxWidth(0.9f)
+                    .padding(vertical = 16.dp)
+                    .height(IntrinsicSize.Min)
+            )
+
+            AnimatedVisibility(
+                visible = isContentVisible,
+                enter = fadeIn(animationSpec = tween(3000)) + slideInVertically(
+                    animationSpec = tween(3000),
+                    initialOffsetY = { it / 2 }
                 )
-                SelectionContainer {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center,
-                        modifier = Modifier.padding(horizontal = 16.dp)
-                    ) {
-                        Spacer(modifier = Modifier.height(48.dp))
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background)
+                        .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Top
+                ) {
+                    Spacer(modifier = Modifier.height(48.dp))
 
-                        Text(
-                            text = "Développement d'Applications Métier sur Mesure.",
-                            style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.primary,
-                            textAlign = TextAlign.Center,
-                        )
-                        Spacer(modifier = Modifier.height(48.dp))
+                    Image(
+                        painterResource(Res.drawable.logoalphaupscaled),
+                        contentDescription = "AB-K Native Logo",
+                        modifier = Modifier
+                            .widthIn(max = 1000.dp)
+                            .fillMaxWidth(0.9f)
+                    )
+                    SelectionContainer {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                            modifier = Modifier.padding(horizontal = 16.dp)
+                        ) {
+                            Spacer(modifier = Modifier.height(48.dp))
 
-                        Text(
-                            text = "AB-K Native. Lancement officiel Printemps 2026.",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Spacer(modifier = Modifier.height(16.dp))
+                            Text(
+                                text = "Développement d'Applications Métier sur Mesure.",
+                                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
+                                color = MaterialTheme.colorScheme.primary,
+                                textAlign = TextAlign.Center,
+                            )
+                            Spacer(modifier = Modifier.height(48.dp))
 
-                        Text(
-                            text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onSurface
-                        )
-                        Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = "AB-K Native. Lancement officiel Printemps 2026.",
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Spacer(modifier = Modifier.height(16.dp))
 
-                        Text(
-                            // Adresse e-mail professionnelle (contact@abknative.fr)
-                            text = "contact@abknative.fr",
-                            style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
-                            color = MaterialTheme.colorScheme.secondary
-                        )
+                            Text(
+                                text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
+                                style = MaterialTheme.typography.titleMedium,
+                                color = MaterialTheme.colorScheme.onSurface
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+
+                            Text(
+                                // Adresse e-mail professionnelle (contact@abknative.fr)
+                                text = "contact@abknative.fr",
+                                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold),
+                                color = MaterialTheme.colorScheme.secondary
+                            )
+                        }
                     }
                 }
             }
