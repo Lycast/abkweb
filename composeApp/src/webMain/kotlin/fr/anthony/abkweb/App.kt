@@ -89,8 +89,8 @@ fun App() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Top
                 ) {
-                    Spacer(modifier = Modifier.height(48.dp))
 
+                    Spacer(modifier = Modifier.height(48.dp))
                     Image(
                         painterResource(Res.drawable.logoalphaupscaled),
                         contentDescription = "AB-K Native Logo",
@@ -104,30 +104,30 @@ fun App() {
                             verticalArrangement = Arrangement.Center,
                             modifier = Modifier.padding(horizontal = 16.dp)
                         ) {
-                            Spacer(modifier = Modifier.height(48.dp))
 
+                            Spacer(modifier = Modifier.height(48.dp))
                             Text(
-                                text = "Développement d'Applications Métier sur Mesure.",
+                                text = "Développement d'applications métier sur mesure.",
                                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
                                 color = MaterialTheme.colorScheme.primary,
                                 textAlign = TextAlign.Center,
                             )
-                            Spacer(modifier = Modifier.height(48.dp))
 
+                            Spacer(modifier = Modifier.height(48.dp))
                             Text(
-                                text = "AB-K Native. Lancement bientôt. Rendez-vous au Printemps 2026.",
+                                text = "AB-K Native. Bientôt, rendez-vous au printemps 2026.",
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
-                            Spacer(modifier = Modifier.height(16.dp))
 
+                            Spacer(modifier = Modifier.height(16.dp))
                             Text(
                                 text = "Vous avez déjà un projet, ou vous aimeriez échanger sur vos idées ? Contactez-moi dès aujourd'hui :",
                                 style = MaterialTheme.typography.titleMedium,
                                 color = MaterialTheme.colorScheme.onSurface
                             )
-                            Spacer(modifier = Modifier.height(8.dp))
 
+                            Spacer(modifier = Modifier.height(8.dp))
                             Text(
                                 // Adresse e-mail professionnelle (contact@abknative.fr)
                                 text = "contact@abknative.fr",
