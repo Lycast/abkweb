@@ -13,7 +13,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.jetbrains.compose.resources.painterResource
 import abkweb.composeapp.generated.resources.Res
-import abkweb.composeapp.generated.resources.abkalpha
 import abkweb.composeapp.generated.resources.logoalphaupscaled
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.slideInVertically
