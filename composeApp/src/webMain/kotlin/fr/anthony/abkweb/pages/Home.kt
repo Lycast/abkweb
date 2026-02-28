@@ -1,15 +1,10 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.components.AppSection
-import fr.anthony.abkweb.components.BodyText
-import fr.anthony.abkweb.components.H1Custom
-import fr.anthony.abkweb.components.PrimaryButton
-import fr.anthony.abkweb.components.SecondaryButton
-import fr.anthony.abkweb.components.ServiceCard
-import fr.anthony.abkweb.components.TextHighlight
+import fr.anthony.abkweb.components.*
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
+import org.jetbrains.compose.web.attributes.alt
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -20,9 +15,14 @@ fun Home(
     // Mais on garde un conteneur qui centre tout verticalement pour le Hero
     Div({ classes("flex-grow", "w-full", "flex", "flex-col", *AppColors.bgMain) }) {
 
-        // SECTION HERO
+        // BANNIÈRE
+        //Banner()
+
+
         AppSection {
-            Div({ classes("text-center") }) {
+
+            // --- 1. SECTION HERO ---
+            Div({ classes("text-center", "animate-fade-in") }) {
 
                 // Un petit badge au-dessus du titre pour le côté "SaaS"
                 Span({
@@ -51,45 +51,106 @@ fun Home(
                 BodyText(extraClasses = arrayOf("max-w-2xl", "mx-auto", "mb-10")) {
                     Text("Développeur Fullstack spécialisé KMP. Je conçois des applications mobiles et web unifiées avec un seul code source pour une performance native.")
                 }
+            }
 
-                Div({ classes("flex", "flex-col", "md:flex-row", "justify-center", "gap-4") }) {
+            // --- 2. BLOCS NARRATIFS ---
+            Div({ classes("flex", "flex-col", "w-full", "animate-fade-in-up") }) {
 
-                    // Bouton principal vers l'expertise
-                    PrimaryButton("Découvrir mon expertise") {
-                        onNavigate(Page.EXPERTISE)
-                    }
-
-                    // Bouton secondaire vers le FSM
-                    SecondaryButton("Voir la solution FSM →") {
-                        onNavigate(Page.FSM)
+                // BLOC 1 : L'Expertise (Image à droite par défaut)
+                FeatureBlock(
+                    title = "Unification Native : iOS, Android et Web", // Titre mis à jour pour inclure le Web
+                    description = "Ne choisissez plus entre performance, portée et coûts de développement. Je conçois des applications unifiées sur un seul code source Kotlin robuste. Vos utilisateurs bénéficient d'une expérience native fluide sur ios, android et n'importe quel navigateur.",
+                    ctaText = "Découvrir mon approche KMP →",
+                    onCtaClick = { onNavigate(Page.EXPERTISE) },
+                    isReversed = false
+                ) {
+                    Div({
+                        classes(
+                            "w-full",
+                            "max-w-2xl", // Permet d'avoir une image assez large mais contenue
+                            "md:h-[400px]",
+                            "h-[300px]", // 400px sur grand écran, 300px sur mobile
+                            "flex",
+                            "justify-center",
+                            "items-center",
+                            "bg-surfaceLight",
+                            "dark:bg-surfaceDark",
+                            "rounded-2xl", // On garde le fond de carte pour le relief
+                            "p-4",
+                            "border",
+                            "border-slate-800" // Un peu de padding pour le visuel
+                        )
+                    }) {
+                        Img(src = "home_kmp_visual.png", attrs = {
+                            classes("w-full", "h-full", "object-contain")
+                            alt("Composition KMP : Application unifiée sur iPhone, Android et Desktop Web")
+                        })
                     }
                 }
-            }
-        }
 
-        // Dans Home.kt, juste après ton Hero
-        AppSection(isAltBackground = true) {
-            Div({
-                classes("grid", "grid-cols-1", "md:grid-cols-3", "gap-8")
-            }) {
-                ServiceCard(
-                    icon = "📱",
-                    title = "Expertise KMP",
-                    tag = "MULTI-SUPPORT",
-                    description = "Développement d'applications natives iOS et Android avec un seul code source Kotlin. Performance maximale et maintenance réduite."
-                )
-                ServiceCard(
-                    icon = "⚙️",
-                    title = "Solution FSM",
-                    tag = "MÉTIER",
-                    description = "Optimisation de vos interventions terrain. Une solution robuste pensée pour la mobilité et l'efficacité opérationnelle."
-                )
-                ServiceCard(
-                    icon = "🛠️",
-                    title = "Audit & Conseil",
-                    tag = "QUALITÉ",
-                    description = "Analyse de vos architectures existantes et accompagnement vers une transition Kotlin Multiplatform maîtrisée."
-                )
+                // BLOC 2 : Le Produit FSM (Image à gauche)
+                FeatureBlock(
+                    title = "Solution FSM : Le futur de vos interventions terrain",
+                    description = "Fini le papier et les processus déconnectés. Je développe actuellement une solution Field Service Management, pensée pour améliorer l'efficacité opérationnelle sur le terrain.",
+                    ctaText = "Voir la roadmap 2027 →",
+                    onCtaClick = { onNavigate(Page.FSM) },
+                    isReversed = true // <-- Alterne le sens de lecture
+                ) {
+                    Div({
+                        classes(
+                            "w-full",
+                            "max-w-2xl", // Permet d'avoir une image assez large mais contenue
+                            "md:h-[400px]",
+                            "h-[300px]", // 400px sur grand écran, 300px sur mobile
+                            "flex",
+                            "justify-center",
+                            "items-center",
+                            "bg-surfaceLight",
+                            "dark:bg-surfaceDark",
+                            "rounded-2xl", // On garde le fond de carte pour le relief
+                            "p-4",
+                            "border",
+                            "border-slate-800" // Un peu de padding pour le visuel
+                        )
+                    }) {
+                        Img(src = "home_logo_fsm.png", attrs = {
+                            classes("w-full", "h-full", "object-contain")
+                            alt("K Native FSM")
+                        })
+                    }
+                }
+
+                // BLOC 3 : L'Humain & Les Projets (Image à droite)
+                FeatureBlock(
+                    title = "Le développeur derrière le code",
+                    description = "De l'industrie au développement logiciel : un parcours atypique au service de la performance. Aujourd'hui, je conçois des solutions durables avec des technologies modernes comme Kotlin Multiplatform (KMP).",
+                    ctaText = "Découvrir mon parcours et mes projets →",
+                    onCtaClick = { onNavigate(Page.PORTFOLIO) },
+                    isReversed = false
+                ) {
+                    Div({
+                        classes(
+                            "w-full",
+                            "max-w-2xl", // Permet d'avoir une image assez large mais contenue
+                            "md:h-[400px]",
+                            "h-[300px]", // 400px sur grand écran, 300px sur mobile
+                            "flex",
+                            "justify-center",
+                            "items-center",
+                            "bg-surfaceLight",
+                            "dark:bg-surfaceDark",
+                            "rounded-2xl", // On garde le fond de carte pour le relief
+                            "p-4",
+                            "border",
+                            "border-slate-800" // Un peu de padding pour le visuel
+                        )
+                    }) {
+                        Img(src = "home_dev_avatar.png", attrs = {
+                            classes("w-full", "h-full", "object-contain")
+                            alt("Avatar")
+                        })
+                    }
+                }
             }
         }
     }

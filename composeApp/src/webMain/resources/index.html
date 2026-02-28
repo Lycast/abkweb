@@ -31,6 +31,8 @@
             theme: {
                 extend: {
                     colors: {
+                        surfaceLight: '#F9FAFB',
+                        surfaceDark: '#101010',
                         brandPrimary: '#285abf',
                         brandSecondary: '#7b77c9',
                         brandAccent: '#c7a63a'
@@ -38,6 +40,22 @@
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Montserrat', 'sans-serif']
+                    },
+
+                    // Définition des animations fluides
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0.25' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(400px)' }, // Départ un peu plus bas
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 2s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 1.5s ease-out forwards'
                     }
                 }
             }
@@ -60,6 +78,6 @@
     </noscript>
 </div>
 
-<script type="application/javascript" src="composeApp.js"></script>
+<script type="application/javascript" src="composeApp.js"></script> // Cannot resolve file 'composeApp.js'
 </body>
 </html>

@@ -57,6 +57,7 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
             Nav({ classes("hidden", "md:flex", "gap-8", "items-center") }) {
                 DesktopNavLink("Expertise", currentPage == Page.EXPERTISE) { onNavigate(Page.EXPERTISE) }
                 DesktopNavLink("Solution FSM", currentPage == Page.FSM) { onNavigate(Page.FSM) }
+                DesktopNavLink("Portfolio", currentPage == Page.PORTFOLIO) { onNavigate(Page.PORTFOLIO) }
                 PrimaryButton("Me contacter") { onNavigate(Page.CONTACT) }
             }
 

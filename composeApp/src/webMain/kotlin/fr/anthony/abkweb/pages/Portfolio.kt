@@ -8,23 +8,23 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun Fsm(onNavigate: (Page) -> Unit) {
+fun Portfolio(onNavigate: (Page) -> Unit) {
     Div({ classes("flex-grow", "w-full", "flex", "flex-col", *AppColors.bgMain) }) {
         AppSection {
             Div({ classes("flex", "flex-col", "items-center", "text-center", "max-w-3xl", "mx-auto", "py-12") }) {
 
                 H1Custom(extraClasses = arrayOf("mb-6")) {
-                    Text("Solution ")
-                    TextHighlight(colorClass = AppColors.accent) { Text("FSM") }
+                    Text("Parcours & ")
+                    TextHighlight(colorClass = AppColors.accent) { Text("Projets") }
                 }
 
                 BodyText(extraClasses = arrayOf("mb-10")) {
-                    Text("L'outil de terrain pensé pour les professionnels. La présentation détaillée de la solution arrivent très prochainement.")
+                    Text("De l'industrie au développement logiciel KMP. Cette galerie de projets et mon parcours détaillé sont en cours d'intégration.")
                 }
 
                 // Le pont vers la conversion
                 Div({ classes("w-fit") }) {
-                    SecondaryButton("Me contacter pour la roadmap 2027 →") {
+                    SecondaryButton("Voir mon profil LinkedIn en attendant →") {
                         onNavigate(Page.CONTACT)
                     }
                 }
