@@ -8,6 +8,7 @@ import fr.anthony.abkweb.components.FooterComponent
 import fr.anthony.abkweb.components.HeaderComponent
 import fr.anthony.abkweb.pages.*
 import fr.anthony.abkweb.router.Page
+import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Main
 import org.jetbrains.compose.web.renderComposable
@@ -19,7 +20,10 @@ fun main() {
         var currentPage by remember { mutableStateOf(Page.HOME) }
 
         // Déclaration propre de la fonction de navigation pour éviter la répétition
-        val navigateTo: (Page) -> Unit = { newPage -> currentPage = newPage }
+        val navigateTo: (Page) -> Unit = { newPage ->
+            currentPage = newPage
+            window.scrollTo(0.0, 0.0)
+        }
 
         // LE SQUELETTE DE L'APPLICATION
         Div({ classes("min-h-screen", "flex", "flex-col", "w-full") }) {
