@@ -7,45 +7,52 @@ import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Text
 
 /**
- * Bouton d'action principal (Call To Action).
- * Utilise la couleur 'emerald' définie dans le thème Tailwind.
+ * Bouton d'action principal (CTA).
+ * Utilise ta couleur Primaire officielle #285abf.
  */
 @Composable
 fun PrimaryButton(text: String, onClick: () -> Unit) {
     Button({
         classes(
-            "bg-emerald",
+            "bg-brandPrimary",     // Ton bleu officiel
             "text-white",
-            "px-6",
-            "py-3",
+            "px-6", "py-3",
             "rounded-lg",
             "font-bold",
-            "hover:bg-green-600",
-            "transition-colors",
-            "shadow-md"
+            "hover:bg-blue-700",    // Un bleu un peu plus sombre au survol
+            "transition-all",       // Transition fluide
+            "duration-300",
+            "shadow-md",
+            "active:scale-95"      // Petit effet de pression au clic (très "natif")
         )
-        // On connecte l'événement clic du DOM à la fonction Kotlin passée en paramètre
         onClick { onClick() }
     }) {
         Text(text)
     }
 }
 
+/**
+ * Bouton d'action secondaire (Outline).
+ * Utilise ta couleur Secondaire #7b77c9 pour la bordure.
+ */
 @Composable
 fun SecondaryButton(text: String, onClick: () -> Unit) {
+
+    val dynamicBorder = arrayOf("border-slate-200", "dark:border-slate-800")
+
     A(href = "#", {
         classes(
-            // Dimensions exactes du PrimaryButton pour un alignement parfait
-            "px-6", "py-3", "font-bold", "rounded-lg",
-
-            // La bordure qui crée le bouton visuellement
-            "border-2", "border-slate-200", "dark:border-slate-700",
-
-            // Comportement au survol
-            "hover:border-cobalt", "hover:text-cobalt",
-
-            // Alignement et couleurs de base
-            "transition-colors", "flex", "items-center", "justify-center",
+            "px-6", "py-3",
+            "font-bold",
+            "rounded-lg",
+            "border-2",
+            *dynamicBorder,
+            "hover:border-brandPrimary",
+            "hover:text-brandPrimary",
+            "transition-all",
+            "duration-300",
+            "flex", "items-center", "justify-center",
+            "active:scale-95",
             *AppColors.textPrimary
         )
         onClick {

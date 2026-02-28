@@ -3,6 +3,7 @@ package fr.anthony.abkweb.components
 import androidx.compose.runtime.*
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
+import org.jetbrains.compose.web.attributes.alt
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -13,19 +14,43 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
 
     // On ajoute "relative" pour pouvoir positionner le menu mobile en dessous
     Header({
-        classes("w-full", *AppColors.bgMain, "backdrop-blur-md", "sticky", "top-0", "z-50", "shadow-sm", "relative")
+        classes("w-full", *AppColors.bgMain, "backdrop-blur-md",
+            "sticky", "top-0", "z-50", "shadow-sm", "relative",
+            "transition-colors", "duration-500")
     }) {
         Div({ classes("container", "mx-auto", "px-6", "py-4", "flex", "justify-between", "items-center") }) {
 
-            // 1. Logo
+            // 1. Logo (Icône seule) & Identité (Texte)
             Div({
-                classes("text-2xl", "font-heading", "font-bold", "text-cobalt", "cursor-pointer")
+                // 'group' permet de déclencher l'animation de la ligne or sur le texte
+                // même si on ne survole que l'icône de la clé.
+                classes("flex", "items-center", "gap-4", "cursor-pointer", "group")
                 onClick {
-                    isMobileMenuOpen = false // On ferme le menu si on clique sur le logo
+                    isMobileMenuOpen = false
                     onNavigate(Page.HOME)
                 }
             }) {
-                Text("ABK Native")
+                // La Clé - Source unique, pas de switch de thème nécessaire
+                Img(src = "/logo_key_color.png", attrs = {
+                    // h-12 pour qu'elle ait une belle présence, object-contain pour éviter la déformation
+                    classes("h-14", "w-auto", "object-contain", "transition-transform", "duration-500", "group-hover:rotate-90")
+                    alt("Icône ABK Native")
+                })
+
+                // Le Texte ABK Native
+                Span({
+                    classes(
+                        "text-2xl", "font-heading", "font-bold", "tracking-tight", "text-brandPrimary",
+                        "relative",
+                        // Effet de ligne dorée au survol
+                        "after:content-['']", "after:absolute", "after:left-0", "after:bottom-[-2px]",
+                        "after:h-[2px]", "after:w-0", "after:bg-brandAccent",
+                        "after:transition-all", "after:duration-300",
+                        "group-hover:after:w-full"
+                    )
+                }) {
+                    Text("ABK Native")
+                }
             }
 
             // 2. Navigation Bureau
@@ -77,12 +102,12 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
 private fun DesktopNavLink(text: String, isActive: Boolean, onClick: () -> Unit) {
     A(href = "#", {
 
-        val colorClasses = if (isActive) arrayOf("text-cobalt") else AppColors.textSecondary
+        val colorClasses = if (isActive) arrayOf("text-brandSecondary") else AppColors.textSecondary
 
         classes(
             *colorClasses,
             if (isActive) "font-bold" else "font-medium",
-            "hover:text-cobalt",
+            "hover:text-brandPrimary",
             "transition-colors"
         )
         onClick { it.preventDefault(); onClick() }
@@ -93,11 +118,12 @@ private fun DesktopNavLink(text: String, isActive: Boolean, onClick: () -> Unit)
 private fun MobileNavLink(text: String, isActive: Boolean, onClick: () -> Unit) {
     A(href = "#", {
 
-        val colorClasses = if (isActive) arrayOf("text-cobalt") else AppColors.textSecondary
+        val colorClasses = if (isActive) arrayOf("text-brandSecondary") else AppColors.textSecondary
 
         classes(
             *colorClasses,
             if (isActive) "font-bold" else "font-medium",
+            "hover:text-brandPrimary",
             "text-lg",
             "block",
             "w-full",

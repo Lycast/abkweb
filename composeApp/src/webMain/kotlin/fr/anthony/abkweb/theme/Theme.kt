@@ -1,15 +1,18 @@
 package fr.anthony.abkweb.theme
 
 object AppColors {
-    // On définit ici les paires Clair/Sombre pour éviter les oublis
-    val bgMain = arrayOf("bg-white", "dark:bg-slate-900")
-    val bgSection = arrayOf("bg-slate-50", "dark:bg-slate-800")
+    // FONDS : On garde un blanc cassé et un bleu-nuit profond pour le premium
+    val bgMain = arrayOf("bg-white", "dark:bg-black")
+    val bgSection = arrayOf("bg-slate-50", "dark:bg-slate-900")
 
+    // TEXTES
     val textPrimary = arrayOf("text-slate-900", "dark:text-white")
     val textSecondary = arrayOf("text-slate-600", "dark:text-slate-400")
 
-    val cobalt = "text-cobalt" // Notre couleur de marque
-    val emerald = "text-emerald"
+    // MARQUE
+    val primary = "text-brandPrimary"
+    val secondary = "text-brandSecondary"
+    val accent = "text-brandAccent"
 }
 
 object AppTypography {

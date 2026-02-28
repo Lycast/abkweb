@@ -1,61 +1,77 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.theme.AppColors
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun FooterComponent() {
     Footer({
-        // "mt-auto" s'assure que le footer est toujours poussé tout en bas,
-        // même si la page a très peu de contenu.
-        classes("bg-slate-900", "text-slate-300", "py-12", "mt-auto", "w-full")
+        // On utilise bg-black pour l'OLED ou un gris très sombre pour le relief
+        classes("bg-black", "border-t", "border-slate-800", "py-12", "mt-auto", "w-full")
     }) {
         Div({ classes("container", "mx-auto", "px-6") }) {
 
-            // Grille CSS : 1 colonne sur mobile, 3 colonnes sur PC (md:grid-cols-3)
-            Div({ classes("grid", "grid-cols-1", "md:grid-cols-3", "gap-8", "mb-8") }) {
+            Div({ classes("grid", "grid-cols-1", "md:grid-cols-3", "gap-12", "mb-8") }) {
 
-                // Colonne 1 : Marque
+                // 1. Identité
                 Div({ classes("flex", "flex-col", "space-y-4") }) {
-
-                    // TODO: Remplacer ce Span par la balise Img() de ton logo
-                    Span({ classes("text-2xl", "font-heading", "font-bold", "text-white") }) {
+                    Span({ classes("text-2xl", "font-heading", "font-bold", "text-brandPrimary") }) {
                         Text("ABK Native")
                     }
-
-                    P({ classes("text-sm", "leading-relaxed") }) {
+                    P({ classes("text-sm", "leading-relaxed", "text-slate-400") }) {
                         Text("L'unification native au service de votre entreprise. Kotlin Multiplatform, du serveur à l'interface.")
                     }
                 }
 
-                // Colonne 2 : Liens Rapides
-                Div({ classes("flex", "flex-col", "space-y-2") }) {
-                    H3({ classes("text-white", "font-bold", "mb-2") }) { Text("Navigation") }
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm") }) { Text("Expertise KMP") }
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm") }) { Text("Solution FSM") }
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm") }) { Text("Me contacter") }
+                // 2. Navigation
+                Div({ classes("flex", "flex-col", "space-y-3") }) {
+                    H3({ classes("text-white", "font-bold", "mb-2", "text-sm", "uppercase", "tracking-wider") }) {
+                        Text("Navigation")
+                    }
+                    FooterLink("Expertise KMP")
+                    FooterLink("Solution FSM")
+                    FooterLink("Me contacter")
                 }
 
-                // Colonne 3 : Réseaux & Légal
-                Div({ classes("flex", "flex-col", "space-y-2") }) {
-                    H3({ classes("text-white", "font-bold", "mb-2") }) { Text("Réseaux sociaux") }
+                // 3. Réseaux & Légal
+                Div({ classes("flex", "flex-col", "space-y-3") }) {
+                    H3({ classes("text-white", "font-bold", "mb-2", "text-sm", "uppercase", "tracking-wider") }) {
+                        Text("Réseaux sociaux")
+                    }
+                    FooterLink("LinkedIn")
+                    FooterLink("GitHub")
 
-                    // TODO: Mettre tes vrais liens (ex: href="https://linkedin.com/in/tonprofil")
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm") }) { Text("LinkedIn") }
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm") }) { Text("GitHub") }
-
-                    // TODO: Créer une page de mentions légales (obligatoire en tant que freelance)
-                    A(href = "#", { classes("hover:text-emerald", "transition-colors", "text-sm", "mt-4") }) { Text("Mentions légales") }
+                    Div({ classes("mt-4") }) {
+                        FooterLink("Mentions légales")
+                    }
                 }
             }
 
-            // Ligne de séparation subtile
-            Hr({ classes("border-slate-700", "my-6") })
+            Hr({ classes("border-slate-800", "my-8") })
 
-            // Copyright avec l'année de ton lancement
-            Div({ classes("text-center", "text-sm", "text-slate-500") }) {
-                Text("© 2026 ABK Native. Tous droits réservés.")
+            // Copyright
+            Div({ classes("text-center", "text-xs", "text-slate-500", "uppercase", "tracking-widest") }) {
+                Text("© 2026 ABK Native. Designé pour l'efficacité OLED.")
             }
         }
+    }
+}
+
+/**
+ * Petit atome local pour les liens du footer afin d'éviter la répétition
+ */
+@Composable
+private fun FooterLink(text: String, href: String = "#") {
+    A(href = href, {
+        classes(
+            "text-slate-400",
+            "hover:text-brandPrimary",
+            "transition-colors",
+            "text-sm",
+            "duration-300"
+        )
+    }) {
+        Text(text)
     }
 }

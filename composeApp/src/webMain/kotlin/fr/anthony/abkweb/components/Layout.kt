@@ -7,7 +7,7 @@ import org.jetbrains.compose.web.dom.Section
 
 @Composable
 fun AppSection(
-    isAltBackground: Boolean = false, // Pour alterner entre blanc et gris très clair
+    isAltBackground: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val bgClasses = if (isAltBackground) AppColors.bgSection else AppColors.bgMain
