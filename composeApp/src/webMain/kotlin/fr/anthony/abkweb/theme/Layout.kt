@@ -6,7 +6,6 @@ import org.jetbrains.compose.web.dom.Section
 
 @Composable
 fun AppSection(
-    isAltBackground: Boolean = false,
     useTightSpacing: Boolean = false,
     content: @Composable () -> Unit
 ) {

@@ -49,7 +49,6 @@ fun ContactCard(
         // 4. Zone d'action (Bouton ou Texte, poussé vers le bas)
         Div({ classes("mt-auto", "pt-4", "w-full") }) {
             if (actionLink != null) {
-                val dynamicBorder = arrayOf("border-slate-200", "dark:border-slate-800")
 
                 A(href = actionLink, attrs = {
                     classes(
