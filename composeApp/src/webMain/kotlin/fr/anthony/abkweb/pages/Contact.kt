@@ -1,43 +1,43 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.components.*
-import fr.anthony.abkweb.theme.AppColors
+import fr.anthony.abkweb.components.ContactCard
+import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun Contact() {
-    Div({ classes("flex-grow", "w-full", "flex", "flex-col", *AppColors.bgMain) }) {
+    Div({ classes("flex-grow", "w-full", "flex", "flex-col") }) {
 
         AppSection {
             Div({ classes("flex", "flex-col", "items-center", "text-center", "max-w-4xl", "mx-auto") }) {
 
-                // 1. HEADER CONTACT
-                H1Custom(extraClasses = arrayOf("mb-6")) {
+                // --- 1. HEADER CONTACT ---
+                H1Custom(AppSpacing.marginM) {
                     Text("Discutons de votre ")
                     TextHighlight(colorClass = AppColors.accent) { Text("projet") }
                 }
 
-                BodyText(extraClasses = arrayOf("max-w-2xl", "mx-auto", "mb-16")) {
+                BodyText("max-w-2xl", "mx-auto", AppSpacing.marginL) {
                     Text("Vous avez un besoin spécifique en développement Kotlin Multiplatform, ou vous souhaitez en savoir plus sur ma future solution FSM ? N'hésitez pas à me contacter directement.")
                 }
 
-                // 2. GRILLE DE CONTACT (3 colonnes)
+                // --- 2. GRILLE DE CONTACT ---
                 Div({
-                    classes("w-full", "grid", "grid-cols-1", "md:grid-cols-3", "gap-8")
+                    classes("w-full", "grid", "grid-cols-1", "md:grid-cols-2", "lg:grid-cols-3", *AppSpacing.blockGap)
                 }) {
 
-                    // Carte 1 : EMAIL (Action Principale)
+                    // Carte 1 : EMAIL
                     ContactCard(
                         icon = "/icon_mail.png",
                         title = "Par Email",
                         description = "Je réponds généralement sous 24h.",
-                        actionText = "m'écrire un email",
+                        actionText = "M'écrire un email",
                         actionLink = "mailto:contact@abknative.fr"
                     )
 
-                    // Carte 3 : LINKEDIN
+                    // Carte 2 : LINKEDIN
                     ContactCard(
                         icon = "/icon_linkedin.png",
                         title = "LinkedIn",
@@ -45,6 +45,9 @@ fun Contact() {
                         actionText = "Voir mon profil",
                         actionLink = "https://www.linkedin.com/in/anthony-brenon-a7761b213"
                     )
+
+                    // Note : md:grid-cols-2 car il n'y a que 2 cartes ici.
+                    // Si on ajoutes une 3ème, repasser en md:grid-cols-3.
                 }
             }
         }

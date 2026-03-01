@@ -1,13 +1,13 @@
-package fr.anthony.abkweb.components
+package fr.anthony.abkweb.theme
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.theme.AppColors
-import fr.anthony.abkweb.theme.AppTypography
-import org.jetbrains.compose.web.dom.*
+import org.jetbrains.compose.web.dom.H1
+import org.jetbrains.compose.web.dom.P
+import org.jetbrains.compose.web.dom.Span
 
 @Composable
 fun H1Custom(
-    vararg extraClasses: String, // Pour ajouter des marges (mb-6) ou autres au cas par cas
+    vararg extraClasses: String,
     content: @Composable () -> Unit
 ) {
     H1({

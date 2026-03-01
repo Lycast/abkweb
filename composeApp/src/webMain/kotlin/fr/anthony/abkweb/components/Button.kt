@@ -2,7 +2,8 @@ package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
 import fr.anthony.abkweb.theme.AppColors
-import org.jetbrains.compose.web.dom.A
+import fr.anthony.abkweb.theme.AppShapes
+import fr.anthony.abkweb.theme.AppSpacing
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.Text
 
@@ -14,16 +15,14 @@ import org.jetbrains.compose.web.dom.Text
 fun PrimaryButton(text: String, onClick: () -> Unit) {
     Button({
         classes(
-            "bg-brandPrimary",     // Ton bleu officiel
-            "text-white",
-            "px-6", "py-3",
-            "rounded-lg",
+            "bg-brandPrimary", "text-white",
+            *AppSpacing.btnPadding,
+            AppShapes.button,
             "font-bold",
-            "hover:bg-blue-700",    // Un bleu un peu plus sombre au survol
-            "transition-all",       // Transition fluide
-            "duration-300",
-            "shadow-md",
-            "active:scale-95"      // Petit effet de pression au clic (très "natif")
+            AppColors.hoverBrightness,
+            *AppColors.themeTransition,
+            AppColors.shadow,
+            "active:scale-90"
         )
         onClick { onClick() }
     }) {
@@ -37,28 +36,19 @@ fun PrimaryButton(text: String, onClick: () -> Unit) {
  */
 @Composable
 fun SecondaryButton(text: String, onClick: () -> Unit) {
-
-    val dynamicBorder = arrayOf("border-slate-200", "dark:border-slate-800")
-
-    A(href = "#", {
+    Button({
         classes(
-            "px-6", "py-3",
+            "bg-transparent", "border-2",
+            *AppColors.border,
+            *AppSpacing.btnPadding,
+            AppShapes.button,
             "font-bold",
-            "rounded-lg",
-            "border-2",
-            *dynamicBorder,
-            "hover:border-brandPrimary",
-            "hover:text-brandPrimary",
-            "transition-all",
-            "duration-300",
-            "flex", "items-center", "justify-center",
-            "active:scale-95",
-            *AppColors.textPrimary
+            *AppColors.hoverBrand,
+            *AppColors.textPrimary,
+            *AppColors.themeTransition,
+            "active:scale-90"
         )
-        onClick {
-            it.preventDefault()
-            onClick()
-        }
+        onClick { onClick() }
     }) {
         Text(text)
     }

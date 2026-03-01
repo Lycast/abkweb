@@ -1,19 +1,19 @@
-package fr.anthony.abkweb.components
+package fr.anthony.abkweb.theme
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.theme.AppColors
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Section
 
 @Composable
 fun AppSection(
     isAltBackground: Boolean = false,
+    useTightSpacing: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val bgClasses = if (isAltBackground) AppColors.bgSection else AppColors.bgMain
+    val spacing = if (useTightSpacing) AppSpacing.sectionTight else AppSpacing.section
 
     Section({
-        classes("py-20", "md:py-32", "w-full", "transition-colors", "duration-500", *bgClasses)
+        classes(*spacing,"w-full")
     }) {
         Div({ classes("container", "mx-auto", "px-6") }) {
             content()
