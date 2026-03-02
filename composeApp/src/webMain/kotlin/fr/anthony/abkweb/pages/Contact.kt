@@ -45,9 +45,6 @@ fun Contact() {
                         actionText = "Voir mon profil",
                         actionLink = "https://www.linkedin.com/in/anthony-brenon-a7761b213"
                     )
-
-                    // Note : md:grid-cols-2 car il n'y a que 2 cartes ici.
-                    // Si on ajoutes une 3ème, repasser en md:grid-cols-3.
                 }
             }
         }

@@ -9,7 +9,6 @@ import org.jetbrains.compose.web.dom.Text
 
 /**
  * Bouton d'action principal (CTA).
- * Utilise ta couleur Primaire officielle #285abf.
  */
 @Composable
 fun PrimaryButton(text: String, onClick: () -> Unit) {
@@ -32,7 +31,6 @@ fun PrimaryButton(text: String, onClick: () -> Unit) {
 
 /**
  * Bouton d'action secondaire (Outline).
- * Utilise ta couleur Secondaire #7b77c9 pour la bordure.
  */
 @Composable
 fun SecondaryButton(text: String, onClick: () -> Unit) {

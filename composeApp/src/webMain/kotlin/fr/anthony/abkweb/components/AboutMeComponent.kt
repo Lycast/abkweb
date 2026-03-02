@@ -13,8 +13,7 @@ fun AboutMeComponent() {
     // État pour gérer l'ouverture/fermeture du texte
     var isExpanded by remember { mutableStateOf(false) }
 
-    // Conteneur principal avec un fond gris clair comme sur la maquette
-    Div({ classes(*AppColors.textPrimary) }) {
+    Div({ classes(*AppColors.textPrimary, *AppColors.themeTransition) }) {
 
         // --- 1ère Partie (Toujours visible) ---
         H3Custom("font-bold", "text-xl", "mb-3") {
@@ -27,7 +26,7 @@ fun AboutMeComponent() {
 
         // --- 2ème Partie (Conditionnelle) ---
         if (isExpanded) {
-            Div({ classes("mt-6") }) { // Marge supérieure pour séparer du premier bloc
+            Div({ classes("mt-6") }) {
                 H3Custom("font-bold", "text-lg", "mb-2") {
                     Text("Pourquoi le développement ?")
                 }

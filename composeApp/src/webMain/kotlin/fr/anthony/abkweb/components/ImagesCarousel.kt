@@ -49,7 +49,6 @@ fun ProjectCarousel(images: List<String>) {
                     currentIndex = if (currentIndex == 0) images.size - 1 else currentIndex - 1
                 }
             }) {
-                // Remplacement par ton fichier SVG
                 Img(src = "icon_chevron_left.svg", attrs = {
                     classes("w-5", "h-5", "dark:invert")
                     alt("Précédent")
@@ -70,7 +69,6 @@ fun ProjectCarousel(images: List<String>) {
                     currentIndex = if (currentIndex == images.size - 1) 0 else currentIndex + 1
                 }
             }) {
-                // Remplacement par ton fichier SVG
                 Img(src = "icon_chevron_right.svg", attrs = {
                     classes("w-5", "h-5", "dark:invert")
                     alt("Suivant")

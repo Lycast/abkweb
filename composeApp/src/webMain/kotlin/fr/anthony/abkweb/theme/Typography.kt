@@ -21,7 +21,6 @@ fun H2Custom(
     content: @Composable () -> Unit
 ) {
     H2({
-        // On utilise ici AppTypography.h2 défini dans ton thème
         classes(*AppTypography.h2, *AppColors.textPrimary, *extraClasses, *AppColors.themeTransition)
     }) {
         content()
@@ -42,11 +41,10 @@ fun H3Custom(
 
 @Composable
 fun BodyText(
-    vararg extraClasses: String, // Permet d'ajouter "mb-10" ou "mx-auto" depuis la page
+    vararg extraClasses: String,
     content: @Composable () -> Unit
 ) {
     P({
-        // On fusionne la typo, la couleur qui switch, et les classes bonus
         classes(*AppTypography.body, *AppColors.textSecondary, *extraClasses, *AppColors.themeTransition)
     }) {
         content()
@@ -55,7 +53,7 @@ fun BodyText(
 
 @Composable
 fun TextHighlight(
-    colorClass: String = "text-cobalt", // Cobalt par défaut, mais modifiable
+    colorClass: String = "text-cobalt",
     content: @Composable () -> Unit
 ) {
     Span({ classes(colorClass) }) {

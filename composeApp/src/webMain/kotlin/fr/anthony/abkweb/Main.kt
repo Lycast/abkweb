@@ -20,7 +20,6 @@ fun main() {
 
     renderComposable(rootElementId = "root") {
 
-        // L'état global de la navigation synchronisé avec l'URL
         var currentPage by remember { mutableStateOf(parsePageFromUrl(window.location.pathname)) }
 
         // Gestion du bouton Précédent/Suivant du navigateur (PopState)
@@ -34,7 +33,6 @@ fun main() {
             }
         }
 
-        // Déclaration propre de la fonction de navigation pour éviter la répétition
         val navigateTo: (Page) -> Unit = { newPage ->
             if (currentPage != newPage) {
                 currentPage = newPage
@@ -59,7 +57,6 @@ fun main() {
                     "sticky", "top-[88px]", "z-40", "pointer-events-none"
                 )
             }) {
-                // On réactive les clics uniquement sur le bouton
                 Div({ classes("pointer-events-auto", "py-6", "px-2") }) {
                     ThemeToggleButton()
                 }

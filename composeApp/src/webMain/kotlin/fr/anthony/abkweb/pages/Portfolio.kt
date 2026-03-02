@@ -33,13 +33,13 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
             AboutMeComponent()
 
             // 2. Le titre des réalisations
-            H2Custom("pt-12", "pb-8", "text-center") {
+            H2Custom("pt-24", "pb-8", "text-center") {
                 Text("Mes ")
                 TextHighlight("text-${AppColors.accent}") { Text("Réalisations") }
             }
 
             // 3. La liste des projets générée dynamiquement
-            Div({ classes("flex", "flex-col", "gap-8") }) {
+            Div({ classes("flex", "flex-col", "gap-8", "animate-fade-in-up") }) {
                 myProjectsList.forEachIndexed { index, project ->
                     Div({ id(project.id) }) {
 
@@ -63,8 +63,8 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
                         FeatureBlock(
                             title = project.title,
                             description = project.shortDescription,
-                            ctaText = "", // Ignoré car isExpandable = true
-                            onCtaClick = {}, // Ignoré
+                            ctaText = "",
+                            onCtaClick = {},
                             isReversed = index % 2 != 0,
                             isExpandable = true,
                             isExpanded = expandedProjectId == project.id,

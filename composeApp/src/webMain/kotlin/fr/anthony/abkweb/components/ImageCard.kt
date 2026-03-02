@@ -16,9 +16,10 @@ fun ImageCard(
         classes(
             "w-full", "max-w-2xl", "md:h-[400px]", "h-[300px]",
             "flex", "justify-center", "items-center",
-            AppShapes.card,       // Utilise ton token
+            AppShapes.card,
             "p-4",
-            *AppColors.border     // Utilise ton token
+            *AppColors.border,
+            *AppColors.themeTransition
         )
     }) {
         Img(src = src, attrs = {

@@ -21,7 +21,6 @@ fun ContactCard(
             "items-center", "text-center", AppSpacing.cardGap, "h-full", *AppColors.bgAlt, *AppColors.themeTransition
         )
     }) {
-        // 1. Icône intelligente (Détecte si c'est une image ou un emoji)
         Span({ classes("text-4xl", "mb-2", "flex", "justify-center", "items-center", "h-10") }) {
             if (icon.contains(".")) {
                 Img(src = icon, attrs = {
@@ -34,14 +33,10 @@ fun ContactCard(
         }
 
         // 2. Titre
-        H3Custom(*AppTypography.h3, *AppColors.textPrimary) {
-            Text(title)
-        }
+        H3Custom { Text(title) }
 
         // 3. Description
-        P({ classes(*AppTypography.bodySmall, *AppColors.textSecondary) }) {
-            Text(description)
-        }
+        BodyText { Text(description) }
 
         // 4. Zone d'action (Bouton ou Texte, poussé vers le bas)
         Div({ classes("mt-auto", "pt-4", "w-full") }) {

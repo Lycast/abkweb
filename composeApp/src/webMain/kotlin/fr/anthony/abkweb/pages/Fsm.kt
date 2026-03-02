@@ -21,7 +21,7 @@ fun Fsm(onNavigate: (Page) -> Unit) {
                     Text("L'outil de terrain pensé pour les professionnels. La présentation détaillée de la solution arrive très prochainement.")
                 }
 
-                SecondaryButton("Me contacter pour la roadmap 2027 →") {
+                SecondaryButton("Me contacter pour en savoir plus →") {
                     onNavigate(Page.CONTACT)
                 }
             }

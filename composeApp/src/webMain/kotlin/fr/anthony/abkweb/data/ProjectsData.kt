@@ -2,7 +2,6 @@ package fr.anthony.abkweb.data
 
 import fr.anthony.abkweb.models.Project
 
-// Cette liste est accessible depuis n'importe où dans ton code
 val myProjectsList = listOf(
     Project(
         id = "kmp-quiz",
@@ -45,9 +44,9 @@ val myProjectsList = listOf(
                 "Construit entièrement depuis zéro, il illustre comment obtenir des performances web optimales tout en conservant une base de logique Kotlin robuste et partagée.",
         fullDescription =
                 "Fonctionnalités Clés :\n" +
-                "- Développement Unifié : Architecture KMP moderne exploitant les cibles `webMain` et `wasmJs`.\n\n" +
-                "- Routage Prêt pour la Production : Routeur SPA (Single Page Application) sur-mesure. Il gère l'accès direct aux URLs et l'historique du navigateur (popstate) via une logique de redirection intelligente sur une page 404.html.\n\n" +
-                "- Expérience Utilisateur (UX) : Mode sombre/clair dynamique synchronisé avec le système de l'utilisateur, et transitions de thème fluides (500ms à 1000ms).\n\n" +
+                "- Développement Unifié : Architecture KMP moderne exploitant les cibles `webMain` et `wasmJs`.\n" +
+                "- Routage Prêt pour la Production : Routeur SPA (Single Page Application) sur-mesure. Il gère l'accès direct aux URLs et l'historique du navigateur (popstate) via une logique de redirection intelligente sur une page 404.html.\n" +
+                "- Expérience Utilisateur (UX) : Mode sombre/clair dynamique synchronisé avec le système de l'utilisateur, et transitions de thème fluides (500ms à 1000ms).\n" +
                 "- Déploiement Automatisé : Pipeline CI/CD qui génère et livre automatiquement les builds statiques sur GitHub Pages, le tout relié à un nom de domaine personnalisé OVH.",
         techStack = "Moteur Principal : Kotlin Multiplatform (KMP) - Logique unifiée cross-platform.\n" +
                 "Framework UI : Compose HTML - Interface web réactive construite à 100% en Kotlin.\n" +
@@ -102,7 +101,7 @@ val myProjectsList = listOf(
                 "Interface Utilisateur : XML, ViewBinding, Fragments, ViewPager2, RecyclerView, Material Design\n" +
                 "Base de données : Room (SQLite)\n" +
                 "Asynchrone : Kotlin Coroutines & LiveData",
-        githubUrl = "https://github.com/Lycast/PointCounter", // Remplace par ton lien
+        githubUrl = "https://github.com/Lycast/PointCounter",
         images = listOf("ss_scorecounter_00.png", "ss_scorecounter_01.png", "ss_scorecounter_02.png")
     ),
 
@@ -123,7 +122,7 @@ val myProjectsList = listOf(
                 "Réseau & API : Retrofit, Gson, Google Maps SDK, Places API\n" +
                 "UI & Médias : ViewBinding, Glide\n" +
                 "Tests : Mockito, Espresso",
-        githubUrl = "https://github.com/Lycast/Go4Lunch", // N'oublie pas de mettre ton vrai lien
+        githubUrl = "https://github.com/Lycast/Go4Lunch",
         images = listOf("ss_go4lunch_00.png", "ss_go4lunch_01.png", "ss_go4lunch_02.png", "ss_go4lunch_03.png", "ss_go4lunch_04.png", "ss_go4lunch_05.png"
         )
     )

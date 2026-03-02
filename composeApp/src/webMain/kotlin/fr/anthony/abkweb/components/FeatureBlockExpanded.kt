@@ -36,7 +36,6 @@ fun FeatureBlockExpanded(
                 Div() {}
             }
 
-            // Le bouton appelle nativement la fonction passée en paramètre
             Button({
                 classes("text-sm", *AppColors.textSecondary, "hover:underline")
                 onClick { onClose() }

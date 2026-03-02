@@ -11,14 +11,12 @@ import org.jetbrains.compose.web.dom.Text
 fun MentionsLegales() {
     Div({ classes("flex-grow", "w-full", "flex", "flex-col") }) {
         AppSection {
-            // "max-w-3xl" est parfait pour la lecture (environ 80 caractères par ligne)
             Div({ classes("max-w-3xl", "mx-auto", "text-left") }) {
 
                 H1Custom("text-center", AppSpacing.marginL) {
                     Text("Mentions Légales")
                 }
 
-                // Utilisation de AppSpacing.stack pour l'espace entre les blocs
                 Div({ classes("flex", "flex-col", AppSpacing.stack, *AppColors.textSecondary) }) {
 
                     LegalBlock("Éditeur du site") {
@@ -48,7 +46,6 @@ private fun LegalBlock(title: String, content: @Composable () -> Unit) {
         H2({ classes(*AppTypography.h3, *AppColors.textPrimary) }) {
             Text(title)
         }
-        // Utilisation de bodySmall pour le texte juridique (plus compact et pro)
         Div({ classes(*AppTypography.bodySmall) }) {
             content()
         }

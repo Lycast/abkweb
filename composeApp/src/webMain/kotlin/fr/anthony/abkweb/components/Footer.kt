@@ -5,7 +5,6 @@ import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
 import fr.anthony.abkweb.theme.AppTypography
-import fr.anthony.abkweb.theme.H3Custom
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.*
@@ -27,7 +26,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
                 // 1. Identité
                 Div({ classes("flex", "flex-col", "gap-4") }) {
                     Span({
-                        classes("text-2xl", "font-heading", "font-bold", "text-${AppColors.primary}")
+                        classes("text-2xl", "font-heading", "font-bold", "text-brandPrimary")
                     }) {
                         Text("ABK Native")
                     }
@@ -38,7 +37,9 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
                 // 2. Navigation
                 Div({ classes("flex", "flex-col", "gap-3") }) {
-                    H3Custom(*AppTypography.caption, "text-slate-300", "mb-2") {
+                    H3({
+                        classes( *AppTypography.h3, "text-slate-300", *AppColors.themeTransition)
+                    }) {
                         Text("Navigation")
                     }
                     FooterInternalLink("Expertise KMP", Page.EXPERTISE, onNavigate)
@@ -49,7 +50,9 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
                 // 3. Réseaux & Légal
                 Div({ classes("flex", "flex-col", "gap-3") }) {
-                    H3Custom(*AppTypography.caption, "text-slate-300", "mb-2") {
+                    H3({
+                        classes( *AppTypography.h3, "text-slate-300", *AppColors.themeTransition)
+                    }) {
                         Text("Réseaux sociaux")
                     }
                     FooterExternalLink("LinkedIn", "https://www.linkedin.com/in/anthony-brenon-a7761b213")
@@ -73,7 +76,6 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 }
 
 // --- SOUS-COMPOSANTS DE LIENS ---
-
 @Composable
 private fun FooterInternalLink(text: String, page: Page, onNavigate: (Page) -> Unit) {
     A(href = "#", attrs = {

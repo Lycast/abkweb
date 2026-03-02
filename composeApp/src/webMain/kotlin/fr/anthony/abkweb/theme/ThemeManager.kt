@@ -9,13 +9,9 @@ import kotlinx.browser.window
 object ThemeManager {
     private const val THEME_KEY = "app_theme"
 
-    // État Compose pour que l'icône du bouton se mette à jour
     var isDark by mutableStateOf(false)
         private set
 
-    /**
-     * À appeler au tout début dans Main.kt
-     */
     fun init() {
         val savedTheme = window.localStorage.getItem(THEME_KEY)
         val systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -30,7 +26,7 @@ object ThemeManager {
 
     private fun setTheme(dark: Boolean) {
         isDark = dark
-        val root = document.documentElement // C'est la balise <html>
+        val root = document.documentElement
         if (dark) {
             root?.classList?.add("dark")
             window.localStorage.setItem(THEME_KEY, "dark")

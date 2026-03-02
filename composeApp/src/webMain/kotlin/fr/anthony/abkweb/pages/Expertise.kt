@@ -95,15 +95,13 @@ fun Expertise(onNavigate: (Page) -> Unit) {
 }
 
 // --- SOUS-COMPOSANTS PRIVÉS (Spécifiques à la page Expertise) ---
-
 @Composable
 private fun ExpertiseCard(title: String, description: String) {
     Div({
         classes(
             *AppColors.border, AppShapes.card, "p-8",
             "flex", "flex-col", "gap-4",
-            *AppColors.themeTransition,
-            "hover:shadow-xl", "duration-300"
+            *AppColors.themeTransition
         )
     }) {
         H3Custom { Text(title) }
@@ -117,7 +115,7 @@ private fun TechBadge(name: String) {
         classes(
             *AppColors.bgAlt, *AppColors.textPrimary, *AppColors.border,
             "px-5", "py-2", AppShapes.card, "text-sm", "font-bold",
-            *AppColors.themeTransition, *AppColors.hoverBrand
+            *AppColors.themeTransition
         )
     }) {
         Text(name)

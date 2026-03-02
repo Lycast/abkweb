@@ -3,7 +3,7 @@ package fr.anthony.abkweb.theme
 object AppColors {
     // --- FONDS ---
     val bgMain = arrayOf("bg-white", "dark:bg-black")
-    val bgAlt = arrayOf("bg-slate-50", "dark:bg-zinc-950") // Fusion de bgSection et bgBanner
+    val bgAlt = arrayOf("bg-slate-50", "dark:bg-zinc-950")
     val bgCard = arrayOf("bg-surfaceLight", "dark:bg-surfaceDark")
 
     // --- BORDURES ---
@@ -14,16 +14,25 @@ object AppColors {
     val textSecondary = arrayOf("text-slate-600", "dark:text-slate-400")
 
     // --- MARQUE (Variables brutes) ---
-    const val primary = "brandPrimary"     // Juste le nom pour composer plus facilement
-    const val secondary = "brandSecondary"
     const val accent = "brandAccent"
 
     // --- ÉTATS INTERACTIFS ---
     val hoverBrightness = "hover:shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.2)]"
-    val hoverBrand = arrayOf("hover:border-brandPrimary", "hover:text-brandPrimary")
+
+    val hoverBrand = arrayOf(
+        "hover:border-brandPrimary",
+        "dark:hover:border-brandPrimary",
+        "hover:text-brandPrimary",
+        "dark:hover:text-brandPrimary",
+        "hover:underline",
+        "hover:decoration-brandPrimary",
+        "hover:decoration-2",
+        "underline-offset-4",
+        "hover:duration-300"
+    )
 
     val themeTransition = arrayOf(
-        "transition-all",
+        "transition-colors",
         "duration-1000",
         "ease-in-out"
     )
@@ -43,14 +52,14 @@ object AppTypography {
 
 object AppSpacing {
     // --- LAYOUT (Grands espacements) ---
-    val section = arrayOf("py-12", "md:py-24")       // Fusion de sectionY et blockPadding
-    val sectionTight = arrayOf("py-6", "md:py-12")   // Unifié
+    val section = arrayOf("py-12", "md:py-24")
+    val sectionTight = arrayOf("py-6", "md:py-12")
 
     // --- COMPOSANTS (Espacements internes) ---
     val card = "p-8"
     val cardGap = "gap-4"
-    val blockGap = arrayOf("gap-10", "md:gap-20")    // Espace entre image et texte
-    val stack = "gap-6"                              // Espace entre titres/textes/boutons (textStack)
+    val blockGap = arrayOf("gap-10", "md:gap-20")
+    val stack = "gap-6"
 
     // --- ÉLÉMENTS (Marges et boutons) ---
     val marginL = "mb-10"

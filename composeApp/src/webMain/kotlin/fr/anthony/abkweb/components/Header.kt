@@ -37,7 +37,8 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
                 Span({
                     classes(
                         "text-xl", "md:text-2xl", "font-heading", "font-bold", "tracking-tight",
-                        "text-${AppColors.primary}", "relative", "sm:block",
+                        "hover:underline", "hover:decoration-${AppColors.accent}", "hover:decoration-2", "underline-offset-4",
+                        "text-brandPrimary", "relative", "sm:block",
                     )
                 }) {
                     Text("ABK Native")
@@ -88,13 +89,14 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
 private fun DesktopNavLink(text: String, isActive: Boolean, onClick: () -> Unit) {
     A(href = "#", {
 
-        val colorClasses = if (isActive) arrayOf("text-${AppColors.secondary}") else AppColors.textSecondary
+        val colorClasses = if (isActive) arrayOf("text-brandPrimary", "dark:text-brandPrimary") else AppColors.textSecondary
 
         classes(
             *colorClasses,
             if (isActive) "font-bold" else "font-medium",
             *AppColors.hoverBrand,
-            "transition-colors"
+            "transition-colors",
+            "duration-200"
         )
         onClick { it.preventDefault(); onClick() }
     }) { Text(text) }
@@ -104,7 +106,7 @@ private fun DesktopNavLink(text: String, isActive: Boolean, onClick: () -> Unit)
 private fun MobileNavLink(text: String, isActive: Boolean, onClick: () -> Unit) {
     A(href = "#", {
 
-        val colorClasses = if (isActive) arrayOf("text-${AppColors.secondary}") else AppColors.textSecondary
+        val colorClasses = if (isActive) arrayOf("text-brandPrimary", "dark:text-brandPrimary") else AppColors.textSecondary
 
         classes(
             *colorClasses,
@@ -114,7 +116,8 @@ private fun MobileNavLink(text: String, isActive: Boolean, onClick: () -> Unit) 
             "block",
             "w-full",
             "text-center",
-            "transition-colors"
+            "transition-colors",
+            "duration-200"
         )
         onClick { it.preventDefault(); onClick() }
     }) { Text(text) }
