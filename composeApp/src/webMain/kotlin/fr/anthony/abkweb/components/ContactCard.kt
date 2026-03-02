@@ -1,10 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.theme.AppColors
-import fr.anthony.abkweb.theme.AppShapes
-import fr.anthony.abkweb.theme.AppSpacing
-import fr.anthony.abkweb.theme.AppTypography
+import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.alt
 import org.jetbrains.compose.web.attributes.target
@@ -37,7 +34,7 @@ fun ContactCard(
         }
 
         // 2. Titre
-        H3({ classes(*AppTypography.h3, *AppColors.textPrimary) }) {
+        H3Custom(*AppTypography.h3, *AppColors.textPrimary) {
             Text(title)
         }
 

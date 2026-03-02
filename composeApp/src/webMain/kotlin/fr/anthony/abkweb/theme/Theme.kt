@@ -19,11 +19,11 @@ object AppColors {
     const val accent = "brandAccent"
 
     // --- ÉTATS INTERACTIFS ---
-    val hoverBrightness = "hover:brightness-110"
+    val hoverBrightness = "hover:shadow-[inset_0_0_0_2000px_rgba(255,255,255,0.2)]"
     val hoverBrand = arrayOf("hover:border-brandPrimary", "hover:text-brandPrimary")
 
     val themeTransition = arrayOf(
-        "transition-colors",
+        "transition-all",
         "duration-1000",
         "ease-in-out"
     )
@@ -33,7 +33,7 @@ object AppColors {
 
 object AppTypography {
     val h1 = arrayOf("text-4xl", "md:text-6xl", "font-bold", "leading-tight", "tracking-tight")
-    val h2 = arrayOf("text-2xl", "md:text-4xl", "font-semibold", "leading-snug")
+    val h2 = arrayOf("text-3xl", "md:text-5xl", "font-semibold", "leading-snug")
     val h3 = arrayOf("text-xl", "md:text-2xl", "font-medium", "leading-snug")
 
     val body = arrayOf("text-base", "md:text-lg", "leading-relaxed")

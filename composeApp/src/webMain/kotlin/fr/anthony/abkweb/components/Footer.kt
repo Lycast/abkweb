@@ -5,6 +5,7 @@ import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
 import fr.anthony.abkweb.theme.AppTypography
+import fr.anthony.abkweb.theme.H3Custom
 import org.jetbrains.compose.web.attributes.ATarget
 import org.jetbrains.compose.web.attributes.target
 import org.jetbrains.compose.web.dom.*
@@ -37,7 +38,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
                 // 2. Navigation
                 Div({ classes("flex", "flex-col", "gap-3") }) {
-                    H3({ classes(*AppTypography.caption, "text-slate-300", "mb-2") }) {
+                    H3Custom(*AppTypography.caption, "text-slate-300", "mb-2") {
                         Text("Navigation")
                     }
                     FooterInternalLink("Expertise KMP", Page.EXPERTISE, onNavigate)
@@ -48,7 +49,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
                 // 3. Réseaux & Légal
                 Div({ classes("flex", "flex-col", "gap-3") }) {
-                    H3({ classes(*AppTypography.caption, "text-slate-300", "mb-2") }) {
+                    H3Custom(*AppTypography.caption, "text-slate-300", "mb-2") {
                         Text("Réseaux sociaux")
                     }
                     FooterExternalLink("LinkedIn", "https://www.linkedin.com/in/anthony-brenon-a7761b213")

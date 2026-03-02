@@ -28,7 +28,9 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
             }) {
                 Img(src = "/logo_key_color.png", attrs = {
                     // On réduit légèrement le logo sur les petits écrans
-                    classes("h-14", "w-auto", "object-contain", "transition-transform", "duration-500", "group-hover:rotate-90")
+                    classes("h-14", "w-auto", "object-contain",
+                        "transition-transform", "duration-500",
+                        "group-hover:rotate-90")
                     alt("Icône ABK Native")
                 })
 

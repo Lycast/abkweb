@@ -1,9 +1,7 @@
 package fr.anthony.abkweb.theme
 
 import androidx.compose.runtime.Composable
-import org.jetbrains.compose.web.dom.H1
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
+import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun H1Custom(
@@ -11,7 +9,32 @@ fun H1Custom(
     content: @Composable () -> Unit
 ) {
     H1({
-        classes(*AppTypography.h1, *AppColors.textPrimary, *extraClasses)
+        classes(*AppTypography.h1, *AppColors.textPrimary, *extraClasses, *AppColors.themeTransition)
+    }) {
+        content()
+    }
+}
+
+@Composable
+fun H2Custom(
+    vararg extraClasses: String,
+    content: @Composable () -> Unit
+) {
+    H2({
+        // On utilise ici AppTypography.h2 défini dans ton thème
+        classes(*AppTypography.h2, *AppColors.textPrimary, *extraClasses, *AppColors.themeTransition)
+    }) {
+        content()
+    }
+}
+
+@Composable
+fun H3Custom(
+    vararg extraClasses: String,
+    content: @Composable () -> Unit
+) {
+    H3({
+        classes(*AppTypography.h3, *AppColors.textPrimary, *extraClasses, *AppColors.themeTransition)
     }) {
         content()
     }
@@ -24,7 +47,7 @@ fun BodyText(
 ) {
     P({
         // On fusionne la typo, la couleur qui switch, et les classes bonus
-        classes(*AppTypography.body, *AppColors.textSecondary, *extraClasses)
+        classes(*AppTypography.body, *AppColors.textSecondary, *extraClasses, *AppColors.themeTransition)
     }) {
         content()
     }

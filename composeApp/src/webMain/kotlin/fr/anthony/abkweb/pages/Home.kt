@@ -45,10 +45,9 @@ fun Home(
                     description = "Ne choisissez plus entre performance, portée et coûts de développement. Je conçois des applications unifiées sur un seul code source Kotlin robuste. Vos utilisateurs bénéficient d'une expérience native fluide sur ios, android et n'importe quel navigateur.",
                     ctaText = "Découvrir mon approche KMP →",
                     onCtaClick = { onNavigate(Page.EXPERTISE) },
-                    isReversed = false
-                ) {
-                    ImageCard("home_kmp_visual.png", "Composition KMP")
-                }
+                    isReversed = false,
+                    visualContent = { ImageCard("home_kmp_visual.png", "Composition KMP") }
+                )
 
                 // BLOC 2 : Le Produit FSM (Image à gauche)
                 FeatureBlock(
@@ -56,10 +55,9 @@ fun Home(
                     description = "Fini le papier et les processus déconnectés. Je développe actuellement une solution Field Service Management, pensée pour améliorer l'efficacité opérationnelle sur le terrain.",
                     ctaText = "Voir la roadmap 2027 →",
                     onCtaClick = { onNavigate(Page.FSM) },
-                    isReversed = true // <-- Alterne le sens de lecture
-                ) {
-                    ImageCard("home_logo_fsm.png", "K Native FSM")
-                }
+                    isReversed = true,
+                    visualContent = { ImageCard("home_logo_fsm.png", "FSM") }
+                )
 
                 // BLOC 3 : L'Humain & Les Projets (Image à droite)
                 FeatureBlock(
@@ -67,10 +65,9 @@ fun Home(
                     description = "De l'industrie au développement logiciel : un parcours atypique au service de la performance. Aujourd'hui, je conçois des solutions durables avec des technologies modernes comme Kotlin Multiplatform (KMP).",
                     ctaText = "Découvrir mon parcours et mes projets →",
                     onCtaClick = { onNavigate(Page.PORTFOLIO) },
-                    isReversed = false
-                ) {
-                    ImageCard("home_dev_avatar.png", "Avatar")
-                }
+                    isReversed = false,
+                    visualContent = { ImageCard("home_dev_avatar.png", "Avatar") }
+                )
             }
         }
     }

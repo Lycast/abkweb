@@ -1,28 +1,85 @@
 package fr.anthony.abkweb.pages
 
-import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.components.SecondaryButton
+import androidx.compose.runtime.*
+import fr.anthony.abkweb.components.AboutMeComponent
+import fr.anthony.abkweb.components.FeatureBlock
+import fr.anthony.abkweb.components.FeatureBlockExpanded
+import fr.anthony.abkweb.components.ProjectCarousel
+import fr.anthony.abkweb.data.myProjectsList
 import fr.anthony.abkweb.router.Page
-import fr.anthony.abkweb.theme.*
+import fr.anthony.abkweb.theme.AppColors
+import fr.anthony.abkweb.theme.H2Custom
+import fr.anthony.abkweb.theme.TextHighlight
+import kotlinx.browser.document
+import kotlinx.browser.window
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Text
+import org.w3c.dom.*
 
 @Composable
 fun Portfolio(onNavigate: (Page) -> Unit) {
+    var expandedProjectId by remember { mutableStateOf<String?>(null) }
+
     Div({ classes("flex-grow", "w-full", "flex", "flex-col") }) {
-        AppSection {
-            Div({ classes("flex", "flex-col", "items-center", "text-center", "max-w-3xl", "mx-auto") }) {
-                H1Custom(AppSpacing.marginM) {
-                    Text("Parcours & ")
-                    TextHighlight("text-${AppColors.accent}") { Text("Projets") }
-                }
 
-                BodyText(AppSpacing.marginL) {
-                    Text("De l'industrie au développement logiciel KMP. Cette galerie de projets et mon parcours détaillé sont en cours d'intégration.")
-                }
+        Div({ classes("container", "mx-auto", "px-6") }) {
 
-                SecondaryButton("Voir mon profil LinkedIn en attendant →") {
-                    onNavigate(Page.CONTACT)
+            H2Custom("text-center", "pb-8") {
+                Text("Mon ")
+                TextHighlight("text-${AppColors.accent}") { Text("Parcours") }
+            }
+
+            // 1. Ton composant "A propos de moi"
+            AboutMeComponent()
+
+            // 2. Le titre des réalisations
+            H2Custom("pt-12", "pb-8", "text-center") {
+                Text("Mes ")
+                TextHighlight("text-${AppColors.accent}") { Text("Réalisations") }
+            }
+
+            // 3. La liste des projets générée dynamiquement
+            Div({ classes("flex", "flex-col", "gap-8") }) {
+                myProjectsList.forEachIndexed { index, project ->
+                    Div({ id(project.id) }) {
+
+                        val handleToggle = {
+                            val isOpening = expandedProjectId != project.id
+                            expandedProjectId = if (isOpening) project.id else null
+
+                            // Si on ferme, on recentre la vue
+                            if (!isOpening) {
+                                window.setTimeout({
+                                    document.getElementById(project.id)?.scrollIntoView(
+                                        arg = ScrollIntoViewOptions(
+                                            behavior = ScrollBehavior.SMOOTH,
+                                            block = ScrollLogicalPosition.START
+                                        )
+                                    )
+                                }, 100)
+                            }
+                        }
+
+                        FeatureBlock(
+                            title = project.title,
+                            description = project.shortDescription,
+                            ctaText = "", // Ignoré car isExpandable = true
+                            onCtaClick = {}, // Ignoré
+                            isReversed = index % 2 != 0,
+                            isExpandable = true,
+                            isExpanded = expandedProjectId == project.id,
+                            onToggle = handleToggle,
+                            visualContent = {
+                                ProjectCarousel(images = project.images)
+                            },
+                            expandedContent = {
+                                FeatureBlockExpanded(
+                                    project = project,
+                                    onClose = handleToggle
+                                )
+                            }
+                        )
+                    }
                 }
             }
         }

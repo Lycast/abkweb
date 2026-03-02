@@ -14,7 +14,7 @@ object ThemeManager {
         private set
 
     /**
-     * À appeler au tout début (dans ton main.kt ou le root de ton app)
+     * À appeler au tout début dans Main.kt
      */
     fun init() {
         val savedTheme = window.localStorage.getItem(THEME_KEY)
