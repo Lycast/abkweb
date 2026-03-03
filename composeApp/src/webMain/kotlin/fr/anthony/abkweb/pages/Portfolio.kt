@@ -8,6 +8,7 @@ import fr.anthony.abkweb.components.ProjectCarousel
 import fr.anthony.abkweb.data.myProjectsList
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
+import fr.anthony.abkweb.theme.AppSpacing
 import fr.anthony.abkweb.theme.H2Custom
 import fr.anthony.abkweb.theme.TextHighlight
 import kotlinx.browser.document
@@ -24,7 +25,7 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
 
         Div({ classes("container", "mx-auto", "px-6") }) {
 
-            H2Custom("text-center", "pb-8") {
+            H2Custom("text-center", *AppSpacing.sectionTight) {
                 Text("Mon ")
                 TextHighlight("text-${AppColors.accent}") { Text("Parcours") }
             }
@@ -33,7 +34,7 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
             AboutMeComponent()
 
             // 2. Le titre des réalisations
-            H2Custom("pt-24", "pb-8", "text-center") {
+            H2Custom(*AppSpacing.sectionTight, "text-center") {
                 Text("Mes ")
                 TextHighlight("text-${AppColors.accent}") { Text("Réalisations") }
             }

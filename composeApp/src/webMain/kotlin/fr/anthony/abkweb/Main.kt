@@ -54,10 +54,10 @@ fun main() {
             Div({
                 classes(
                     "container", "mx-auto", "px-6", "flex", "justify-end",
-                    "sticky", "top-[88px]", "z-40", "pointer-events-none"
+                    "sticky", "top-[80px]", "z-40", "pointer-events-none"
                 )
             }) {
-                Div({ classes("pointer-events-auto", "py-6", "px-2") }) {
+                Div({ classes("pointer-events-auto", "md:pt-8") }) {
                     ThemeToggleButton()
                 }
             }

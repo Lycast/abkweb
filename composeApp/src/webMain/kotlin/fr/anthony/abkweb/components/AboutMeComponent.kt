@@ -21,7 +21,7 @@ fun AboutMeComponent() {
         }
 
         P({ classes("text-base", "leading-relaxed") }) {
-            Text("Mon parcours n'est pas une ligne droite, c'est une suite de constructions. J'ai commencé ma vie professionnelle sur le terrain, où la rigueur n'est pas une option mais une nécessité. De l'ébénisterie au transport routier, puis à la menuiserie d'agencement, j'ai forgé mon autonomie et ma capacité à m'adapter à des environnements exigeants.")
+            Text("Mon parcours n'est pas une ligne droite, c'est une suite de constructions. J'ai commencé ma vie professionnelle sur le terrain. De l'ébénisterie au transport routier, puis à la menuiserie d'agencement, j'ai forgé mon autonomie et ma capacité à m'adapter à des environnements exigeants.")
         }
 
         // --- 2ème Partie (Conditionnelle) ---
@@ -35,7 +35,7 @@ fun AboutMeComponent() {
                 }
 
                 P({ classes("text-base", "leading-relaxed") }) {
-                    Text("Aujourd'hui, ma double compétence Mobile et Backend (Ktor) me permet de concevoir des solutions technologiques aussi précises qu'un plan de menuiserie et aussi fiables qu'une logistique de transport. Je ne me contente pas de coder ; je bâtis des outils performants, pensés pour l'utilisateur final.")
+                    Text("Ma maîtrise de l'écosystème Fullstack Kotlin (KMP & Ktor) me permet de concevoir des solutions numériques de A à Z. Plus que du simple développement, je conçois des systèmes robustes et évolutifs, qui répondent à vos besoins.")
                 }
             }
         }

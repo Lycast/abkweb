@@ -22,14 +22,14 @@ fun Expertise(onNavigate: (Page) -> Unit) {
                 }
 
                 BodyText(AppSpacing.marginL) {
-                    Text("Développer des applications ne suffit plus. Je conçois des systèmes robustes, testables et capables de fonctionner de manière optimale, même en l'absence de réseau.")
+                    Text("Je ne crée pas d'applications isolées, mais des systèmes robustes conçus pour durer. Je mise sur une architecture testable et une synchronisation intelligente pour assurer une performance constante, avec ou sans connexion internet.")
                 }
             }
 
-            // --- 2. GRILLE D'EXPERTISE (2 colonnes sur Desktop, 1 sur Mobile) ---
+            // --- 2. GRILLE D'EXPERTISE (3 colonnes sur Desktop, 1 sur Mobile) ---
             Div({
                 classes(
-                    "grid", "grid-cols-1", "md:grid-cols-2", "gap-8",
+                    "grid", "grid-cols-1", "md:grid-cols-3", "gap-8",
                     "max-w-6xl", "mx-auto", "w-full"
                 )
             }) {
@@ -37,12 +37,6 @@ fun Expertise(onNavigate: (Page) -> Unit) {
                 ExpertiseCard(
                     title = "Logique Métier Unifiée",
                     description = "Mutualisation des règles métier, des modèles de données et de la logique réseau. Un seul code source Kotlin à tester et à maintenir pour iOS, Android et Web, réduisant drastiquement la dette technique et les bugs."
-                )
-
-                // Carte 2 : Offline-First
-                ExpertiseCard(
-                    title = "Approche Offline-First",
-                    description = "L'utilisateur ne doit jamais être bloqué par une perte de réseau. Utilisation avancée de Room/SQLite et des Coroutines pour une persistance locale fiable et une synchronisation transparente en arrière-plan."
                 )
 
                 // Carte 3 : Backend Ktor
@@ -65,21 +59,23 @@ fun Expertise(onNavigate: (Page) -> Unit) {
                     "flex-col",
                     "items-center",
                     "text-center",
-                    "max-w-4xl",
                     "mx-auto",
                     "mt-12",
+                    "pt-12",
                     "gap-8"
                 )
             }) {
                 H2Custom { Text("Stack Technique Maîtrisée") }
 
-                Div({ classes("flex", "flex-wrap", "justify-center", "gap-4") }) {
+                Div({ classes("flex", "flex-wrap", "justify-center", "gap-2") }) {
                     TechBadge("Kotlin")
-                    TechBadge("Jetpack Compose")
+                    TechBadge("Kotlin Multiplatform (KMP)")
+                    TechBadge("Jetpack Compose & SwiftUI")
                     TechBadge("Compose HTML")
                     TechBadge("Ktor")
                     TechBadge("Coroutines & Flow")
-                    TechBadge("Room / SQLite")
+                    TechBadge("Room / SQLDelight")
+                    TechBadge("Koin")
                     TechBadge("Clean Architecture")
                 }
             }
@@ -99,7 +95,7 @@ fun Expertise(onNavigate: (Page) -> Unit) {
 private fun ExpertiseCard(title: String, description: String) {
     Div({
         classes(
-            *AppColors.border, AppShapes.card, "p-8",
+            *AppColors.border, AppShapes.button, "p-8",
             "flex", "flex-col", "gap-4",
             *AppColors.themeTransition
         )
@@ -114,7 +110,7 @@ private fun TechBadge(name: String) {
     Span({
         classes(
             *AppColors.bgAlt, *AppColors.textPrimary, *AppColors.border,
-            "px-5", "py-2", AppShapes.card, "text-sm", "font-bold",
+            "px-5", "py-2", AppShapes.button, "text-sm", "font-bold",
             *AppColors.themeTransition
         )
     }) {

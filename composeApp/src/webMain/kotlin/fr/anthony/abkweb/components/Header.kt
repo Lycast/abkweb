@@ -16,7 +16,7 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
         classes("w-full", "backdrop-blur-md", *AppColors.bgMain, *AppColors.themeTransition,
             "sticky", "top-0", "z-50", AppColors.shadow, "relative")
     }) {
-        Div({ classes("container", "mx-auto", "px-6", "py-4", "flex", "justify-between", "items-center") }) {
+        Div({ classes("container", "mx-auto", "px-6", "py-2", "md:py-4", "flex", "justify-between", "items-center") }) {
 
             // --- 1. IDENTITÉ ---
             Div({

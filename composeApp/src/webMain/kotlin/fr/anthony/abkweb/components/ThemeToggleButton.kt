@@ -3,28 +3,54 @@ package fr.anthony.abkweb.components
 import androidx.compose.runtime.Composable
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.ThemeManager
-import org.jetbrains.compose.web.attributes.alt
 import org.jetbrains.compose.web.dom.Button
-import org.jetbrains.compose.web.dom.Img
+import org.jetbrains.compose.web.dom.Div
+import org.jetbrains.compose.web.dom.Span
+import org.jetbrains.compose.web.dom.Text
 
 
 @Composable
 fun ThemeToggleButton() {
     Button({
         classes(
-            "h-10", "w-10", "rounded-full", "flex", "items-center", "justify-center",
-            "transition-all", "duration-1000", "shadow-sm", "hover:shadow-md", "cursor-pointer",
+            "h-10", "w-auto", "px-3", "rounded-lg",
+            "flex", "items-center", "gap-2",
+            "transition-all", "duration-1000", "cursor-pointer",
             "border", "focus:outline-none",
-            *AppColors.bgMain,
-            "border-slate-200", "dark:border-slate-700"
+            "bg-dark/10", "dark:bg-white/05",
+            "border-slate-200/50", "dark:border-slate-700/50",
+            "hover:bg-brandPrimary/20"
         )
         onClick { ThemeManager.toggle() }
     }) {
+        // Texte
+        Span({
+            classes("text-xs", "font-bold", "uppercase", "tracking-wider", *AppColors.textSecondary)
+        }) {
+            Text(if (ThemeManager.isDark) "Mode sombre" else "Mode clair")
+        }
+
         val iconPath = if (ThemeManager.isDark) "/icon_moon.svg" else "/icon_sun.svg"
 
-        Img(src = iconPath, attrs = {
-            classes("h-5", "w-5", "transition-all", "duration-500", "dark:invert")
-            alt("Changer le thème")
-        })
+        // Remplacement de Img par une Div avec un masque
+        Div({
+            classes("h-4", "w-4", "transition-all", "duration-500")
+            // On applique la même couleur que le texte secondaire
+            classes(*AppColors.textSecondary)
+            // On utilise bg-current pour que l'icône prenne la couleur de la classe précédente
+            classes("bg-current")
+
+            style {
+                // Configuration du masque CSS
+                property("-webkit-mask-image", "url('$iconPath')")
+                property("mask-image", "url('$iconPath')")
+                property("-webkit-mask-repeat", "no-repeat")
+                property("mask-repeat", "no-repeat")
+                property("-webkit-mask-size", "contain")
+                property("mask-size", "contain")
+                property("-webkit-mask-position", "center")
+                property("mask-position", "center")
+            }
+        }) {}
     }
 }
