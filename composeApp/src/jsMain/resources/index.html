@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABK Native - Expert Kotlin Multiplatform & FSM</title>
+
+    <link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+
+    <meta name="description" content="ABK Native : Expert en développement d'applications mobiles et web sur mesure avec Kotlin Multiplatform. Solutions FSM et architecture unifiée.">
+    <meta name="author" content="Anthony Brenon - ABK Native">
+    <link rel="canonical" href="https://www.abknative.fr" />
+
+    <meta property="og:title" content="ABK Native - Expert Kotlin Multiplatform">
+    <meta property="og:description" content="Développement d'applications mobiles et web unifiées avec un seul code source Kotlin.">
+    <meta property="og:url" content="https://www.abknative.fr">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.abknative.fr/favicon.png"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ABK Native - Anthony Brenon">
+    <meta name="twitter:description" content="Expertise KMP et solutions de gestion d'interventions terrain (FSM).">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "ABK Native",
+            "legalName": "Anthony Brenon - ABK Native",
+            "url": "https://www.abknative.fr",
+            "logo": "https://www.abknative.fr/favicon.png",
+            "description": "Expert en développement Kotlin Multiplatform (KMP). Création d'applications unifiées avec Jetpack Compose (Android), SwiftUI (iOS) et Compose HTML (Web).",
+            "knowsAbout": [
+                "Kotlin Multiplatform (KMP)",
+                "Jetpack Compose",
+                "SwiftUI",
+                "Compose HTML",
+                "Field Service Management (FSM)",
+                "Mobile & Web Architecture",
+                "Clean Architecture",
+                "MVVM"
+            ],
+            "founder": {
+                "@type": "Person",
+                "name": "Anthony Brenon"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "FR"
+            }
+        }
+    </script>
+
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('app_theme');
+                const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        surfaceLight: '#F9FAFB',
+                        surfaceDark: '#101010',
+                        brandPrimary: '#285abf',
+                        brandSecondary: '#7b77c9',
+                        brandAccent: '#c7a63a'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    },
+                    keyframes: {
+                        fadeIn: { '0%': { opacity: '0.25' }, '100%': { opacity: '1' } },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(400px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 2s ease-out forwards',
+                        'fade-in-up': 'fadeInUp 1.5s ease-out forwards'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-sans m-0 p-0">
+<div id="root">
+    <header style="display:none">
+        <h1>ABK Native - Anthony Brenon</h1>
+        <h2>Expert Kotlin Multiplatform (KMP) & Développeur Fullstack</h2>
+    </header>
+
+    <main style="display:none">
+        <article>
+            <h1>Expertise en Développement Cross-Platform avec Kotlin</h1>
+            <p>
+                <strong>ABK Native</strong> est une entreprise spécialisée dans la création d'applications unifiées performantes.
+                Grâce à <strong>Kotlin Multiplatform (KMP)</strong>, je mutualise la logique métier pour vos projets
+                <strong>iOS (SwiftUI)</strong>, <strong>Android (Jetpack Compose)</strong> et <strong>Web (Compose HTML)</strong>.
+            </p>
+            <ul>
+                <li>Développement d'interfaces modernes avec <strong>Jetpack Compose</strong> et <strong>SwiftUI</strong>.</li>
+                <li>Architecture logicielle robuste et Scalable (Clean Architecture, MVVM, MVI).</li>
+                <li>Modernisation de bases de code natives existantes vers le multiplateforme.</li>
+            </ul>
+        </article>
+    </main>
+
+    <noscript>
+        <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+            <h1>ABK Native - Expert Kotlin Multiplatform</h1>
+            <p>Mon portfolio utilise des technologies modernes pour vous offrir une expérience fluide.</p>
+            <p><strong>Veuillez activer JavaScript dans votre navigateur pour profiter de l'expérience interactive complète.</strong></p>
+            <hr style="width: 50px; margin: 20px auto;">
+            <p>Contact : <a href="mailto:contact@abknative.fr">cantact@abknative.fr</a></p>
+        </div>
+    </noscript>
+</div>
+
+<script type="application/javascript" src="composeApp.js"></script>
+</body>
+</html>

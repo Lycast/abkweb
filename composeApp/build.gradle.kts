@@ -18,7 +18,7 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
+        jsMain.dependencies {
             implementation(compose.html.core)
             implementation(compose.runtime)
         }
