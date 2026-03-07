@@ -42,7 +42,7 @@ The project has been restructured to focus solely on a high-performance JS distr
 │   │   └── resources/          # Static assets (Images, SVGs, Logos)
 │   └── build.gradle.kts        # JS Build configuration & GitHub Pages task
 └── README.md
-
+```
 ---
 
 
