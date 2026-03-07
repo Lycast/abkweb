@@ -48,8 +48,8 @@ The project has been restructured to focus solely on a high-performance JS distr
 
 ## 📄 License & Contact
 
-© 2026 ABK Native. All rights reserved.
+Copyright (c) 2026 ABK Native. Proprietary software. All rights reserved. No part of this project may be copied, distributed, or modified without permission.
 
 Interested in unified architecture for your iOS, Android, or Web projects?
 
-**[Get in touch via the website](https://www.google.com/search?q=https://www.abknative.fr/contact)**.
+**[Get in touch via the website](https://www.abknative.fr/contact)**.
