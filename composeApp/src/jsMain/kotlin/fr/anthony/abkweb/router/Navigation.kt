@@ -18,7 +18,7 @@ fun PageRouter(currentPage: Page, onNavigate: (Page) -> Unit) {
         Page.HOME -> Home(onNavigate = onNavigate)
         Page.EXPERTISE -> Expertise(onNavigate = onNavigate)
         Page.FSM -> Fsm(onNavigate = onNavigate)
-        Page.PORTFOLIO -> Portfolio(onNavigate = onNavigate)
+        Page.PORTFOLIO -> Portfolio()
         Page.CONTACT -> Contact()
         Page.LEGAL -> MentionsLegales()
     }
