@@ -3,7 +3,7 @@ package fr.anthony.abkweb.theme
 object AppColors {
     // --- FONDS ---
     val bgMain = arrayOf("bg-white", "dark:bg-black")
-    val bgMain90 = arrayOf("bg-white/90", "dark:bg-black/90")
+    val bgMain90 = arrayOf("bg-white/95", "dark:bg-black/95")
     val bgAlt = arrayOf("bg-slate-50", "dark:bg-zinc-950")
     val bgCard = arrayOf("bg-surfaceLight", "dark:bg-surfaceDark")
 

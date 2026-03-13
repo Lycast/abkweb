@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.*
+import fr.anthony.abkweb.CommonLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
@@ -41,7 +42,7 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
                         "text-brandPrimary", "relative", "sm:block",
                     )
                 }) {
-                    Text("ABK Native")
+                    Text(CommonLabels.ABK_NATIVE)
                 }
             }
 
@@ -50,10 +51,10 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
 
                 // NAVIGATION BUREAU
                 Nav({ classes("hidden", "md:flex", "gap-8", "items-center") }) {
-                    DesktopNavLink("Expertise", currentPage == Page.EXPERTISE) { onNavigate(Page.EXPERTISE) }
-                    DesktopNavLink("Solution FSM", currentPage == Page.FSM) { onNavigate(Page.FSM) }
-                    DesktopNavLink("Portfolio", currentPage == Page.PORTFOLIO) { onNavigate(Page.PORTFOLIO) }
-                    PrimaryButton("Me contacter") { onNavigate(Page.CONTACT) }
+                    DesktopNavLink(CommonLabels.NAV_EXPERTISE, currentPage == Page.EXPERTISE) { onNavigate(Page.EXPERTISE) }
+                    DesktopNavLink(CommonLabels.NAV_FSM, currentPage == Page.FSM) { onNavigate(Page.FSM) }
+                    DesktopNavLink(CommonLabels.NAV_PORTFOLIO, currentPage == Page.PORTFOLIO) { onNavigate(Page.PORTFOLIO) }
+                    PrimaryButton(CommonLabels.NAV_CONTACT) { onNavigate(Page.CONTACT) }
                 }
 
                 // BOUTON BURGER
@@ -74,11 +75,11 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
                     "border-t", *AppColors.border, "flex", "flex-col", "p-6", AppSpacing.stack, *AppColors.themeTransition
                 )
             }) {
-                MobileNavLink("Accueil", currentPage == Page.HOME) { isMobileMenuOpen = false; onNavigate(Page.HOME) }
-                MobileNavLink("Expertise KMP", currentPage == Page.EXPERTISE) { isMobileMenuOpen = false; onNavigate(Page.EXPERTISE) }
-                MobileNavLink("Solution FSM", currentPage == Page.FSM) { isMobileMenuOpen = false; onNavigate(Page.FSM) }
-                MobileNavLink("Portfolio", currentPage == Page.PORTFOLIO) { isMobileMenuOpen = false; onNavigate(Page.PORTFOLIO) }
-                PrimaryButton("Me contacter") { isMobileMenuOpen = false; onNavigate(Page.CONTACT) }
+                MobileNavLink(CommonLabels.NAV_HOME, currentPage == Page.HOME) { isMobileMenuOpen = false; onNavigate(Page.HOME) }
+                MobileNavLink(CommonLabels.NAV_EXPERTISE, currentPage == Page.EXPERTISE) { isMobileMenuOpen = false; onNavigate(Page.EXPERTISE) }
+                MobileNavLink(CommonLabels.NAV_FSM, currentPage == Page.FSM) { isMobileMenuOpen = false; onNavigate(Page.FSM) }
+                MobileNavLink(CommonLabels.NAV_PORTFOLIO, currentPage == Page.PORTFOLIO) { isMobileMenuOpen = false; onNavigate(Page.PORTFOLIO) }
+                PrimaryButton(CommonLabels.NAV_CONTACT) { isMobileMenuOpen = false; onNavigate(Page.CONTACT) }
             }
         }
     }

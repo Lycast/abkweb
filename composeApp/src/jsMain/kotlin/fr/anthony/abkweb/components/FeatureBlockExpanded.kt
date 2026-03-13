@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.CommonLabels
 import fr.anthony.abkweb.model.Project
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.BodyText
@@ -26,7 +27,7 @@ fun FeatureBlockExpanded(
         // Actions de bas de projet
         Div({ classes("flex", "flex-col", "sm:flex-row", "justify-between", "items-center", "mt-8", "gap-4") }) {
             if (project.githubUrl != null) {
-                SecondaryButton("Voir le code source →") {
+                SecondaryButton(CommonLabels.ACTION_GO_TO_CODE) {
                     window.open(project.githubUrl, "_blank")
                 }
             } else {
@@ -37,7 +38,7 @@ fun FeatureBlockExpanded(
                 classes("text-sm", *AppColors.textSecondary, "hover:underline")
                 onClick { onClose() }
             }) {
-                Text("↑ Refermer")
+                Text(CommonLabels.ACTION_CLOSE)
             }
         }
     }

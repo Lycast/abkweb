@@ -1,6 +1,9 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.CommonLabels
+import fr.anthony.abkweb.FooterLabels
+import fr.anthony.abkweb.UrlLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
@@ -28,10 +31,10 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
                     Span({
                         classes("text-2xl", "font-heading", "font-bold", "text-brandPrimary")
                     }) {
-                        Text("ABK Native")
+                        Text(CommonLabels.ABK_NATIVE)
                     }
                     P({ classes(*AppTypography.bodySmall, "text-slate-400") }) {
-                        Text("L'unification native au service de votre entreprise. Kotlin Multiplatform, du serveur à l'interface.")
+                        Text(FooterLabels.DESCRIPTION)
                     }
                 }
 
@@ -40,12 +43,12 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
                     H3({
                         classes( *AppTypography.h3, "text-slate-300", *AppColors.themeTransition)
                     }) {
-                        Text("Navigation")
+                        Text(FooterLabels.NAV)
                     }
-                    FooterInternalLink("Expertise KMP", Page.EXPERTISE, onNavigate)
-                    FooterInternalLink("Solution FSM", Page.FSM, onNavigate)
-                    FooterInternalLink("Portfolio", Page.PORTFOLIO, onNavigate)
-                    FooterInternalLink("Me contacter", Page.CONTACT, onNavigate)
+                    FooterInternalLink(CommonLabels.NAV_EXPERTISE, Page.EXPERTISE, onNavigate)
+                    FooterInternalLink(CommonLabels.NAV_FSM, Page.FSM, onNavigate)
+                    FooterInternalLink(CommonLabels.NAV_PORTFOLIO, Page.PORTFOLIO, onNavigate)
+                    FooterInternalLink(CommonLabels.NAV_CONTACT, Page.CONTACT, onNavigate)
                 }
 
                 // 3. Réseaux & Légal
@@ -53,13 +56,13 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
                     H3({
                         classes( *AppTypography.h3, "text-slate-300", *AppColors.themeTransition)
                     }) {
-                        Text("Réseaux sociaux")
+                        Text(FooterLabels.SOCIAL)
                     }
-                    FooterExternalLink("LinkedIn", "https://www.linkedin.com/in/anthony-brenon-a7761b213")
-                    FooterExternalLink("GitHub", "https://github.com/Lycast")
+                    FooterExternalLink(FooterLabels.LINKEDIN, UrlLabels.URL_LINKEDIN)
+                    FooterExternalLink(FooterLabels.GITHUB, UrlLabels.URL_GIT_HOME)
 
                     Div({ classes("mt-4", "flex", "flex-col", "gap-3") }) {
-                        FooterInternalLink("Mentions légales", Page.LEGAL, onNavigate)
+                        FooterInternalLink(FooterLabels.MENTION, Page.LEGAL, onNavigate)
                     }
                 }
             }
@@ -69,7 +72,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
             // Copyright
             Div({ classes("text-center", *AppTypography.caption, "text-slate-400") }) {
-                Text("© 2026 ABK Native. Site conçu et développé avec Kotlin & Compose HTML + Tailwind CSS.")
+                Text(FooterLabels.TEXT_BOTTOM)
             }
         }
     }

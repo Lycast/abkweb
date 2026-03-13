@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.ButtonLabels
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.ThemeManager
 import org.jetbrains.compose.web.dom.Button
@@ -27,17 +28,14 @@ fun ThemeToggleButton() {
         Span({
             classes("text-xs", "font-bold", "uppercase", "tracking-wider", *AppColors.textSecondary)
         }) {
-            Text(if (ThemeManager.isDark) "Mode sombre" else "Mode clair")
+            Text(if (ThemeManager.isDark) ButtonLabels.DARK else ButtonLabels.LIGHT)
         }
 
         val iconPath = if (ThemeManager.isDark) "/icon_moon.svg" else "/icon_sun.svg"
 
-        // Remplacement de Img par une Div avec un masque
         Div({
             classes("h-4", "w-4", "transition-all", "duration-500")
-            // On applique la même couleur que le texte secondaire
             classes(*AppColors.textSecondary)
-            // On utilise bg-current pour que l'icône prenne la couleur de la classe précédente
             classes("bg-current")
 
             style {

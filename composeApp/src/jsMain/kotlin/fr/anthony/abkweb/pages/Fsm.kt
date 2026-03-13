@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.PageFSMLabels
 import fr.anthony.abkweb.components.SecondaryButton
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*
@@ -13,15 +14,15 @@ fun Fsm(onNavigate: (Page) -> Unit) {
         AppSection {
             Div({ classes("flex", "flex-col", "items-center", "text-center", "max-w-3xl", "mx-auto") }) {
                 H1Custom(AppSpacing.marginM) {
-                    Text("Solution ")
-                    TextHighlight("text-${AppColors.accent}") { Text("FSM") }
+                    Text(PageFSMLabels.TITLE_A)
+                    TextHighlight("text-${AppColors.accent}") { Text(PageFSMLabels.TITLE_B) }
                 }
 
                 BodyText(AppSpacing.marginL) {
-                    Text("L'outil de terrain pensé pour les professionnels. La présentation détaillée de la solution arrive très prochainement.")
+                    Text(PageFSMLabels.DESCRIPTION)
                 }
 
-                SecondaryButton("Me contacter pour en savoir plus →") {
+                SecondaryButton(PageFSMLabels.LINK_CONTACT) {
                     onNavigate(Page.CONTACT)
                 }
             }

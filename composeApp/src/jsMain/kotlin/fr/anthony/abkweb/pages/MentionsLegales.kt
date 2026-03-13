@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.PageMentionsLabels
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2
@@ -14,25 +15,25 @@ fun MentionsLegales() {
             Div({ classes("max-w-3xl", "mx-auto", "text-left") }) {
 
                 H1Custom("text-center", AppSpacing.marginL) {
-                    Text("Mentions Légales")
+                    Text(PageMentionsLabels.TITLE)
                 }
 
                 Div({ classes("flex", "flex-col", AppSpacing.stack, *AppColors.textSecondary) }) {
 
-                    LegalBlock("Éditeur du site") {
-                        P { Text("ABK Native (Anthony Brenon)") }
-                        P { Text("Micro-entreprise — SIRET : En cours d'immatriculation") }
-                        P { Text("Domiciliation : Cholet, France") }
-                        P { Text("Email de contact : contact@abknative.fr") }
+                    LegalBlock(PageMentionsLabels.LEGAL_BLOCK_A_LABEL) {
+                        P { Text(PageMentionsLabels.BLOCK_A_TEXT_A) }
+                        P { Text(PageMentionsLabels.BLOCK_A_TEXT_B) }
+                        P { Text(PageMentionsLabels.BLOCK_A_TEXT_C) }
+                        P { Text(PageMentionsLabels.BLOCK_A_TEXT_D) }
                     }
 
-                    LegalBlock("Hébergement") {
-                        P { Text("GitHub Pages (GitHub, Inc.)") }
-                        P { Text("88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis") }
+                    LegalBlock(PageMentionsLabels.LEGAL_BLOCK_B_LABEL) {
+                        P { Text(PageMentionsLabels.BLOCK_B_TEXT_A) }
+                        P { Text(PageMentionsLabels.BLOCK_B_TEXT_B) }
                     }
 
-                    LegalBlock("Propriété intellectuelle") {
-                        P { Text("Toute reproduction ou représentation, intégrale ou partielle, du site ou de ses éléments est interdite sans autorisation préalable.") }
+                    LegalBlock(PageMentionsLabels.LEGAL_BLOCK_C_LABEL) {
+                        P { Text(PageMentionsLabels.BLOCK_C_TEXT_A) }
                     }
                 }
             }

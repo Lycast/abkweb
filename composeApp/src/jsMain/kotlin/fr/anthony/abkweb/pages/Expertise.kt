@@ -1,7 +1,10 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.PageExpertiseLabels
 import fr.anthony.abkweb.components.SecondaryButton
+import fr.anthony.abkweb.data.expertise
+import fr.anthony.abkweb.data.techBadgeList
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.Div
@@ -17,12 +20,12 @@ fun Expertise(onNavigate: (Page) -> Unit) {
             // --- 1. HEADER HERO ---
             Div({ classes("flex", "flex-col", "items-center", "text-center", "max-w-3xl", "mx-auto", "mb-12") }) {
                 H1Custom(AppSpacing.marginM) {
-                    Text("L'ingénierie ")
-                    TextHighlight("text-${AppColors.accent}") { Text("Kotlin Multiplatform") }
+                    Text(PageExpertiseLabels.TITLE_A)
+                    TextHighlight("text-${AppColors.accent}") { Text(PageExpertiseLabels.TITLE_B) }
                 }
 
                 BodyText(AppSpacing.marginL) {
-                    Text("Je ne crée pas d'applications isolées, mais des systèmes robustes conçus pour durer. Je mise sur une architecture testable et une synchronisation intelligente pour assurer une performance constante, avec ou sans connexion internet.")
+                    Text(PageExpertiseLabels.DESCRIPTION)
                 }
             }
 
@@ -33,23 +36,13 @@ fun Expertise(onNavigate: (Page) -> Unit) {
                     "max-w-6xl", "mx-auto", "w-full"
                 )
             }) {
-                // Carte 1 : Logique Partagée
-                ExpertiseCard(
-                    title = "Logique Métier Unifiée",
-                    description = "Mutualisation des règles métier, des modèles de données et de la logique réseau. Un seul code source Kotlin à tester et à maintenir pour iOS, Android et Web, réduisant drastiquement la dette technique et les bugs."
-                )
 
-                // Carte 3 : Backend Ktor
-                ExpertiseCard(
-                    title = "Backend Ktor & API",
-                    description = "Création d'infrastructures serveurs légères et ultra-performantes 100% Kotlin. Développement d'API RESTful robustes et gestion de la synchronisation en temps réel via WebSockets."
-                )
-
-                // Carte 4 : NOUVELLE CARTE MIGRATION
-                ExpertiseCard(
-                    title = "Modernisation & Migration KMP",
-                    description = "Audit et refactoring progressif d'applications natives existantes. Introduction de Kotlin Multiplatform en douceur pour partager la logique métier étape par étape, sans avoir à réécrire l'interface utilisateur ou perturber la production."
-                )
+                expertise.forEach { expertise ->
+                    ExpertiseCard(
+                        title = expertise.title,
+                        description = expertise.description,
+                    )
+                }
             }
 
             // --- 3. SECTION TECHNOLOGIES (Tags visuels) ---
@@ -65,24 +58,18 @@ fun Expertise(onNavigate: (Page) -> Unit) {
                     "gap-8"
                 )
             }) {
-                H2Custom { Text("Stack Technique Maîtrisée") }
+                H2Custom { Text(PageExpertiseLabels.TECH_STACK_LABEL) }
 
                 Div({ classes("flex", "flex-wrap", "justify-center", "gap-2") }) {
-                    TechBadge("Kotlin")
-                    TechBadge("Kotlin Multiplatform (KMP)")
-                    TechBadge("Jetpack Compose & SwiftUI")
-                    TechBadge("Compose HTML")
-                    TechBadge("Ktor")
-                    TechBadge("Coroutines & Flow")
-                    TechBadge("Room / SQLDelight")
-                    TechBadge("Koin")
-                    TechBadge("Clean Architecture")
+                    techBadgeList.forEach { techBadge ->
+                        TechBadge(name = techBadge)
+                    }
                 }
             }
 
             // --- 4. CTA FINAL ---
             Div({ classes("flex", "flex-col", "items-center", "text-center", "mt-16", "mb-8") }) {
-                SecondaryButton("Discuter de vos besoins techniques →") {
+                SecondaryButton(PageExpertiseLabels.LINK_CONTACT) {
                     onNavigate(Page.CONTACT)
                 }
             }

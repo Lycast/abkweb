@@ -1,6 +1,8 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.*
+import fr.anthony.abkweb.AboutMeComponentLabels
+import fr.anthony.abkweb.CommonLabels
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.H3Custom
 import org.jetbrains.compose.web.dom.Button
@@ -10,32 +12,32 @@ import org.jetbrains.compose.web.dom.Text
 
 @Composable
 fun AboutMeComponent() {
-    // État pour gérer l'ouverture/fermeture du texte
+
     var isExpanded by remember { mutableStateOf(false) }
 
     Div({ classes(*AppColors.textPrimary, *AppColors.themeTransition) }) {
 
         // --- 1ère Partie (Toujours visible) ---
         H3Custom("font-bold", "text-xl", "mb-3") {
-            Text("Du terrain au numérique : l'art d'évoluer.")
+            Text(AboutMeComponentLabels.TITLE)
         }
 
         P({ classes("text-base", "leading-relaxed") }) {
-            Text("Mon parcours n'est pas une ligne droite, c'est une suite de constructions. J'ai commencé ma vie professionnelle sur le terrain. De l'ébénisterie au transport routier, puis à la menuiserie d'agencement, j'ai forgé mon autonomie et ma capacité à m'adapter à des environnements exigeants.")
+            Text(AboutMeComponentLabels.DESCRIPTION)
         }
 
         // --- 2ème Partie (Conditionnelle) ---
         if (isExpanded) {
             Div({ classes("mt-6") }) {
                 H3Custom("font-bold", "text-lg", "mb-2") {
-                    Text("Pourquoi le développement ?")
+                    Text(AboutMeComponentLabels.EXPANDED_TITLE)
                 }
                 P({ classes("text-base", "leading-relaxed", "mb-4") }) {
-                    Text("Parce que j'y ai trouvé la satisfaction de bâtir dans un univers qui me challenge au quotidien. Ma transition vers le développement Android, puis vers l'écosystème Kotlin Multiplatform (KMP), est le fruit d'une volonté : celle de progresser sans cesse et de maîtriser des architectures modernes et robustes.")
+                    Text(AboutMeComponentLabels.EXPANDED_DESCRIPTION_A)
                 }
 
                 P({ classes("text-base", "leading-relaxed") }) {
-                    Text("Ma maîtrise de l'écosystème Fullstack Kotlin (KMP & Ktor) me permet de concevoir des solutions numériques de A à Z. Plus que du simple développement, je conçois des systèmes robustes et évolutifs, qui répondent à vos besoins.")
+                    Text(AboutMeComponentLabels.EXPANDED_DESCRIPTION_B)
                 }
             }
         }
@@ -46,14 +48,14 @@ fun AboutMeComponent() {
                 classes("text-brandPrimary", "font-bold", "text-left", "hover:underline", "w-max", "mt-2", "pt-4")
                 onClick { isExpanded = !isExpanded }
             }) {
-                Text("En savoir plus ↓")
+                Text(CommonLabels.ACTION_MORE)
             }
         } else {
             Button({
                 classes("text-sm", *AppColors.textSecondary, "hover:underline", "pt-4")
                 onClick { isExpanded = !isExpanded }
             }) {
-                Text("↑ Refermer")
+                Text(CommonLabels.ACTION_CLOSE)
             }
         }
     }

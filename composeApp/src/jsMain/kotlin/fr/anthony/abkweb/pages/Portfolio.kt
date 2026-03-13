@@ -1,9 +1,9 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.*
+import fr.anthony.abkweb.PagePortfolioLabels
 import fr.anthony.abkweb.components.*
 import fr.anthony.abkweb.data.myProjectsList
-import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
 import fr.anthony.abkweb.theme.H2Custom
@@ -15,7 +15,7 @@ import org.jetbrains.compose.web.dom.Text
 import org.w3c.dom.*
 
 @Composable
-fun Portfolio(onNavigate: (Page) -> Unit) {
+fun Portfolio() {
 
     var expandedProjectId by remember { mutableStateOf<String?>(null) }
     var lightboxImages by remember { mutableStateOf<List<String>?>(null) }
@@ -26,8 +26,8 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
         Div({ classes("container", "mx-auto", "px-6") }) {
 
             H2Custom("text-center", *AppSpacing.sectionTight) {
-                Text("Mon ")
-                TextHighlight("text-${AppColors.accent}") { Text("Parcours") }
+                Text(PagePortfolioLabels.TITLE_1_A)
+                TextHighlight("text-${AppColors.accent}") { Text(PagePortfolioLabels.TITLE_1_B) }
             }
 
             // 1. Ton composant "A propos de moi"
@@ -35,8 +35,8 @@ fun Portfolio(onNavigate: (Page) -> Unit) {
 
             // 2. Le titre des réalisations
             H2Custom(*AppSpacing.sectionTight, "text-center") {
-                Text("Mes ")
-                TextHighlight("text-${AppColors.accent}") { Text("Réalisations") }
+                Text(PagePortfolioLabels.TITLE_2_A)
+                TextHighlight("text-${AppColors.accent}") { Text(PagePortfolioLabels.TITLE_2_B) }
             }
 
             // 3. La liste des projets générée dynamiquement

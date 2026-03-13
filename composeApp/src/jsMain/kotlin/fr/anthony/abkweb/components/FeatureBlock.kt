@@ -1,6 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
+import fr.anthony.abkweb.CommonLabels
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing
 import fr.anthony.abkweb.theme.BodyText
@@ -62,7 +63,7 @@ fun FeatureBlock(
                             classes("text-brandPrimary", "font-bold", "text-left", "hover:underline", "w-max", "mt-2")
                             onClick { onToggle() }
                         }) {
-                            Text("En savoir plus ↓")
+                            Text(CommonLabels.ACTION_MORE)
                         }
                     }
                 } else {
