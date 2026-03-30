@@ -26,8 +26,8 @@ object AboutMeComponentLabels {
     const val TITLE = "Du terrain au numérique : l'art d'évoluer."
     const val DESCRIPTION = "Mon parcours n'est pas une ligne droite, c'est une suite de constructions. J'ai commencé ma vie professionnelle sur le terrain. De l'ébénisterie au transport routier, puis à la menuiserie d'agencement, j'ai forgé mon autonomie et ma capacité à m'adapter à des environnements exigeants."
     const val EXPANDED_TITLE = "Pourquoi le développement ?"
-    const val EXPANDED_DESCRIPTION_A = "Parce que j'y ai trouvé la satisfaction de bâtir dans un univers qui me challenge au quotidien. Ma transition vers le développement Android, puis vers l'écosystème Kotlin Multiplatform (KMP), est le fruit d'une volonté : celle de progresser sans cesse et de maîtriser des architectures modernes et robustes."
-    const val EXPANDED_DESCRIPTION_B = "Ma maîtrise de l'écosystème Fullstack me permet de concevoir des solutions numériques robustes et évolutives de A à Z, qui répondront à vos besoins."
+    const val EXPANDED_DESCRIPTION_A = "Parce que j'y ai trouvé la satisfaction de bâtir dans un univers qui me challenge au quotidien. Ma transition vers le développement Android, puis vers l'écosystème Kotlin Multiplatform (KMP), est le fruit d'une volonté : celle de progresser sans cesse et de maîtriser des outils modernes pour developper de meilleurs applications."
+    const val EXPANDED_DESCRIPTION_B = "Mon évolution me permet aujourd’hui de concevoir vos applications de A à Z avec une seule exigence : livrer un code propre, performant et évolutif."
 }
 
 object FooterLabels {
@@ -41,16 +41,17 @@ object FooterLabels {
 }
 
 object PageHomeLabels {
-    const val TITLE_A = "L'architecture "
-    const val TITLE_B = "Kotlin Multiplatform "
-    const val TITLE_C = "au service de votre métier"
-    const val DESCRIPTION = "Développeur Fullstack spécialisé KMP. Je conçois des applications mobiles et web unifiées avec un seul code source pour une performance native."
+    const val TITLE_A = "Votre application "
+    const val TITLE_B = "sur tous les écrans,"
+    const val TITLE_C = " sans multiplier les coûts de développement."
+
+    const val DESCRIPTION = "Je suis développeur fullstack. Mon métier est de simplifier le vôtre : je conçois vos applications mobiles et web à partir d'un code source unique. Le résultat ? Une vraie performance native, plus rapide à lancer et beaucoup plus simple à maintenir."
 }
 
 object PageExpertiseLabels {
     const val TITLE_A = "L'ingénierie "
     const val TITLE_B = "Kotlin Multiplatform"
-    const val DESCRIPTION = "Je crée des systèmes robustes conçus pour durer. Je mise sur une architecture testable et une synchronisation intelligente pour assurer une performance constante, avec ou sans connexion internet."
+    const val DESCRIPTION = "Je crée des architectures fiables et testables, pensées pour durer. L'objectif : garantir une application ultra-fluide et une synchronisation intelligente de vos données, même hors ligne."
     const val TECH_STACK_LABEL = "Stack Technique Maîtrisée"
     const val LINK_CONTACT = "Discuter de vos besoins techniques →"
 }

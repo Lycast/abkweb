@@ -7,8 +7,8 @@ val featureList = listOf(
 
     // BLOC 1 : L'Expertise
     Feature(
-        title = "Unification Native : iOS, Android et Web",
-        description = "Ne choisissez plus entre performance, rapidité de déploiement et maîtrise des coûts. Je conçois des applications unifiées sur un seul code source Kotlin robuste. Vos utilisateurs bénéficient d'une expérience native fluide sur iOS, Android et tout navigateur web.",
+        title = "La puissance de Kotlin Multiplatform",
+        description = "Développer pour plusieurs plateformes demande souvent de choisir entre un code hybride (moins performant) ou des équipes séparées (plus chères). Mon expertise Kotlin Multiplatform (KMP) brise cette règle en fusionnant l'efficacité d'un code partagé et la puissance du vrai natif.",
         ctaText = "Découvrir mon approche KMP →",
         onCtaClick = Page.EXPERTISE,
         listOf("home_kmp_visual.webp")
