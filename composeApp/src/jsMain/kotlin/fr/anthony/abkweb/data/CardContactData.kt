@@ -9,7 +9,7 @@ val contacts = listOf(
         title = "Par Email",
         description = "Je réponds généralement très rapidement.",
         actionText = "M'écrire un email",
-        actionLink = "mailto:contact@abknative.fr"
+        actionLink = "mailto:abknative@gmail.com"
     ),
     // Carte 2 : LINKEDIN
     Contact(
