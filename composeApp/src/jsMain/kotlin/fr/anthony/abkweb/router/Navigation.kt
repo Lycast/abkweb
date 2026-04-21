@@ -9,7 +9,8 @@ enum class Page(val route: String) {
     OUTGO("/outgo"),
     CONTACT("/contact"),
     PORTFOLIO("/portfolio"),
-    LEGAL("/legal")
+    LEGAL("/legal"),
+    PRIVACY_OUTGO("/privacy-outgo")
 }
 
 @Composable
@@ -21,6 +22,7 @@ fun PageRouter(currentPage: Page, onNavigate: (Page) -> Unit) {
         Page.PORTFOLIO -> Portfolio()
         Page.CONTACT -> Contact()
         Page.LEGAL -> MentionsLegales()
+        Page.PRIVACY_OUTGO -> PrivacyOutgo(onNavigate = onNavigate)
     }
 }
 

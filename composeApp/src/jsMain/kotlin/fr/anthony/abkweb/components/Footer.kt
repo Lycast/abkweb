@@ -63,6 +63,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
 
                     Div({ classes("mt-4", "flex", "flex-col", "gap-3") }) {
                         FooterInternalLink(FooterLabels.MENTION, Page.LEGAL, onNavigate)
+                        FooterInternalLink(CommonLabels.NAV_PRIVACY_OUTGO, Page.PRIVACY_OUTGO, onNavigate)
                     }
                 }
             }

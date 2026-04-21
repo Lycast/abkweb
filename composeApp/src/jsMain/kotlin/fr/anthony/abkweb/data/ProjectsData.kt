@@ -14,7 +14,7 @@ val myProjectsList = listOf(
                 "\n**Défis & Architecture**\n" +
                 "Le projet se distingue par une architecture multi-modules ultra-découplée appliquant le pattern API/Implementation pour une inversion de dépendance totale. Plus de 95% de la logique métier est partagée. Le cœur de l'application repose sur un moteur de projection temporelle sur-mesure, capable de transformer des récurrences en un prévisionnel mensuel clair.",
         techStack = "\n**Stack Technique & Architecture**\n" +
-                "Kotlin Multiplatform (KMP), Compose Multiplatform (Android), SwiftUI (iOS), SQLDelight (Local), PostgreSQL (Cloud), Ktor (Backend Serverless), Koin, Coroutines/Flow, Firebase Auth",
+                "Kotlin Multiplatform (KMP), Jetpack Compose (Android), SwiftUI (iOS), SQLDelight (Local), PostgreSQL (Cloud), Ktor (Backend Serverless), Koin, Coroutines/Flow, Firebase Auth",
         githubUrl = "https://github.com/Lycast/Outgo",
         images = listOf("ss_outgo_0.webp", "ss_outgo_00.webp", "ss_outgo_01.webp", "ss_outgo_02.webp", "ss_outgo_03.webp", "ss_outgo_04.webp")
     ),

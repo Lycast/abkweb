@@ -10,6 +10,7 @@ object CommonLabels {
     const val NAV_OUTGO = "Projet Outgo"
     const val NAV_PORTFOLIO = "Portfolio"
     const val NAV_CONTACT = "Me contacter"
+    const val NAV_PRIVACY_OUTGO = "Privacy Outgo"
 }
 
 object ButtonLabels {
@@ -61,7 +62,7 @@ object PageOutgoLabels {
     const val TITLE_B = "Outgo."
     const val DESCRIPTION = "Outgo automatise la gestion de votre budget. Simplicité et zéro calcul complexe."
 
-    const val CTA_DOWNLOAD = "Bientôt sur Google Play"
+    const val CTA_DOWNLOAD = "Bientôt sur les Stores"
 
     const val FEATURE_1_TITLE = "L'enveloppe"
     const val FEATURE_1_DESC = "Le suivi mensuel instantané. Définissez votre budget, vos charges fixes et suivez-les en temps réel."
@@ -106,4 +107,39 @@ object PageMentionsLabels {
     const val BLOCK_B_TEXT_B = "88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis"
     const val LEGAL_BLOCK_C_LABEL = "Propriété intellectuelle"
     const val BLOCK_C_TEXT_A = "Toute reproduction ou représentation, intégrale ou partielle, du site ou de ses éléments est interdite sans autorisation préalable."
+}
+
+
+object PrivacyOutgoLabels {
+    const val TITLE = "Politique de Confidentialité - Outgo"
+
+    const val INTRO_TITLE = "1. Introduction"
+    const val INTRO_DESC = "ABK Native exploite l'application mobile Outgo. Cette page vous informe de nos politiques concernant la collecte, l'utilisation et la divulgation des données personnelles lorsque vous utilisez notre service."
+
+    const val DATA_TITLE = "2. Collecte et utilisation des données"
+    const val DATA_INTRO = "Outgo a été conçue avec une philosophie \"Offline-First\" pour minimiser la collecte de données. Cependant, pour assurer le fonctionnement de la synchronisation entre vos appareils, nous collectons certains types d'informations :"
+    val DATA_POINTS = listOf(
+        "Données d'authentification" to "Lors de la création d'un compte, nous utilisons des services tiers (Firebase Authentication) pour sécuriser votre connexion. Cela peut inclure votre adresse e-mail ou votre identifiant d'authentification (Google/Apple).",
+        // Modification : "Données financières" remplacé par "Saisies budgétaires" + précision sur la valeur légale
+        "Saisies budgétaires" to "Vos saisies budgétaires (montants, catégories) sont stockées localement sur votre appareil. Ces informations, saisies manuellement, n'ont aucune valeur légale. Si vous utilisez la synchronisation, ces données sont chiffrées en transit et stockées de manière sécurisée sur nos serveurs. Nous ne vendons, ni n'analysons vos données."
+    )
+
+    const val TIER_TITLE = "3. Fournisseurs de services tiers"
+    const val TIER_INTRO = "Nous utilisons des services tiers pour faciliter notre service ou analyser son utilisation. Ces tiers n'ont accès à vos données que pour ces tâches spécifiques :"
+    val TIER_POINTS = listOf(
+        "Firebase Authentication" to "Pour la gestion sécurisée de vos identifiants.",
+        // Modification : "donnée financière" remplacé par "donnée budgétaire"
+        "Sentry" to "Pour le suivi technique des crashs (données techniques uniquement, aucune donnée budgétaire ou personnelle)."
+    )
+
+    const val SECURITY_TITLE = "4. Sécurité des données"
+    const val SECURITY_DESC = "La sécurité de vos données est importante pour nous. Bien qu'aucune méthode de transmission sur Internet ne soit sécurisée à 100 %, nous utilisons des standards industriels reconnus (chiffrement TLS/SSL) pour protéger vos informations personnelles."
+
+    const val CLEAR_DATA_TITLE = "5. Suppression des données"
+    const val CLEAR_DATA_DESC = "Vous avez le droit de demander la suppression totale de vos données. Vous pouvez supprimer votre compte et toutes les données associées directement depuis les paramètres de l'application Outgo."
+
+    const val CONTACT_TITLE = "6. Contact"
+    const val CONTACT_LINK_TEXT = "notre formulaire de contact"
+    const val CONTACT_URL = "https://abknative.fr/contact"
+    const val CONTACT_SUB = "Pour toute question, contactez-nous via "
 }
