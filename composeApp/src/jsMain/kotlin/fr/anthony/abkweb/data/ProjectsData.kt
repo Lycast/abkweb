@@ -3,6 +3,22 @@ package fr.anthony.abkweb.data
 import fr.anthony.abkweb.model.Project
 
 val myProjectsList = listOf(
+
+    Project(
+        id = "outgo-budget",
+        title = "Outgo - Offline-First",
+        shortDescription = "Une application de gestion de budget. Développée en Kotlin Multiplatform (KMP) avec une philosophie « Offline-First », elle garantit une expérience fluide sans latence et une synchronisation cloud transparente.",
+        fullDescription = "**Vision & Fonctionnalités**\n" +
+                "- Méthode des enveloppes : Suivi des charges fixes et calcul du reste à vivre en temps réel.\n" +
+                "- Synchronisation intelligente : L'interface utilisateur n'attend jamais le réseau. Les actions sont exécutées localement puis orchestrées en arrière-plan avec le cloud.\n" +
+                "\n**Défis & Architecture**\n" +
+                "Le projet se distingue par une architecture multi-modules ultra-découplée appliquant le pattern API/Implementation pour une inversion de dépendance totale. Plus de 95% de la logique métier est partagée. Le cœur de l'application repose sur un moteur de projection temporelle sur-mesure, capable de transformer des récurrences en un prévisionnel mensuel clair.",
+        techStack = "\n**Stack Technique & Architecture**\n" +
+                "Kotlin Multiplatform (KMP), Compose Multiplatform (Android), SwiftUI (iOS), SQLDelight (Local), PostgreSQL (Cloud), Ktor (Backend Serverless), Koin, Coroutines/Flow, Firebase Auth",
+        githubUrl = "https://github.com/Lycast/Outgo",
+        images = listOf("ss_outgo_0.webp", "ss_outgo_00.webp", "ss_outgo_01.webp", "ss_outgo_02.webp", "ss_outgo_03.webp", "ss_outgo_04.webp")
+    ),
+
     Project(
         id = "kmp-quiz",
         title = "KMP Quiz Demo",

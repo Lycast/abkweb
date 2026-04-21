@@ -6,7 +6,7 @@ import fr.anthony.abkweb.pages.*
 enum class Page(val route: String) {
     HOME("/"),
     EXPERTISE("/expertise"),
-    FSM("/fsm"),
+    OUTGO("/outgo"),
     CONTACT("/contact"),
     PORTFOLIO("/portfolio"),
     LEGAL("/legal")
@@ -17,7 +17,7 @@ fun PageRouter(currentPage: Page, onNavigate: (Page) -> Unit) {
     when (currentPage) {
         Page.HOME -> Home(onNavigate = onNavigate)
         Page.EXPERTISE -> Expertise(onNavigate = onNavigate)
-        Page.FSM -> Fsm(onNavigate = onNavigate)
+        Page.OUTGO -> Outgo(onNavigate = onNavigate)
         Page.PORTFOLIO -> Portfolio()
         Page.CONTACT -> Contact()
         Page.LEGAL -> MentionsLegales()

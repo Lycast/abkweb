@@ -52,7 +52,7 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
                 // NAVIGATION BUREAU
                 Nav({ classes("hidden", "md:flex", "gap-8", "items-center") }) {
                     DesktopNavLink(CommonLabels.NAV_EXPERTISE, currentPage == Page.EXPERTISE) { onNavigate(Page.EXPERTISE) }
-                    DesktopNavLink(CommonLabels.NAV_FSM, currentPage == Page.FSM) { onNavigate(Page.FSM) }
+                    DesktopNavLink(CommonLabels.NAV_OUTGO, currentPage == Page.OUTGO) { onNavigate(Page.OUTGO) }
                     DesktopNavLink(CommonLabels.NAV_PORTFOLIO, currentPage == Page.PORTFOLIO) { onNavigate(Page.PORTFOLIO) }
                     PrimaryButton(CommonLabels.NAV_CONTACT) { onNavigate(Page.CONTACT) }
                 }
@@ -77,7 +77,7 @@ fun HeaderComponent(currentPage: Page, onNavigate: (Page) -> Unit) {
             }) {
                 MobileNavLink(CommonLabels.NAV_HOME, currentPage == Page.HOME) { isMobileMenuOpen = false; onNavigate(Page.HOME) }
                 MobileNavLink(CommonLabels.NAV_EXPERTISE, currentPage == Page.EXPERTISE) { isMobileMenuOpen = false; onNavigate(Page.EXPERTISE) }
-                MobileNavLink(CommonLabels.NAV_FSM, currentPage == Page.FSM) { isMobileMenuOpen = false; onNavigate(Page.FSM) }
+                MobileNavLink(CommonLabels.NAV_OUTGO, currentPage == Page.OUTGO) { isMobileMenuOpen = false; onNavigate(Page.OUTGO) }
                 MobileNavLink(CommonLabels.NAV_PORTFOLIO, currentPage == Page.PORTFOLIO) { isMobileMenuOpen = false; onNavigate(Page.PORTFOLIO) }
                 PrimaryButton(CommonLabels.NAV_CONTACT) { isMobileMenuOpen = false; onNavigate(Page.CONTACT) }
             }

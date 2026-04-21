@@ -7,7 +7,7 @@ object CommonLabels {
     const val ACTION_GO_TO_CODE = "Voir le code source →"
     const val NAV_HOME = "Accueil"
     const val NAV_EXPERTISE = "Expertise KMP"
-    const val NAV_FSM = "Solution FSM"
+    const val NAV_OUTGO = "Projet Outgo"
     const val NAV_PORTFOLIO = "Portfolio"
     const val NAV_CONTACT = "Me contacter"
 }
@@ -56,11 +56,28 @@ object PageExpertiseLabels {
     const val LINK_CONTACT = "Discuter de vos besoins techniques →"
 }
 
-object PageFSMLabels {
-    const val TITLE_A = "Solution "
-    const val TITLE_B = "Field Service Management"
-    const val DESCRIPTION = "L'outil de terrain pensé pour les professionnels. La présentation détaillée arrive très prochainement."
-    const val LINK_CONTACT = "Me contacter pour en savoir plus →"
+object PageOutgoLabels {
+    const val TITLE_A = "Dépensez l'esprit léger grâce à "
+    const val TITLE_B = "Outgo."
+    const val DESCRIPTION = "Outgo automatise la gestion de votre budget. Simplicité et zéro calcul complexe."
+
+    const val CTA_DOWNLOAD = "Bientôt sur Google Play"
+
+    const val FEATURE_1_TITLE = "L'enveloppe"
+    const val FEATURE_1_DESC = "Le suivi mensuel instantané. Définissez votre budget, vos charges fixes et suivez-les en temps réel."
+
+    const val FEATURE_2_TITLE = "Simplicité"
+    const val FEATURE_2_DESC = "Aucune catégorie complexe. Juste l'essentiel pour savoir instantanément où vous en êtes."
+
+    const val FEATURE_3_TITLE = "Le Prévisionnel"
+    const val FEATURE_3_DESC = "Anticipez vos fins de mois et projetez-vous en un coup d'œil."
+
+    const val FEATURE_4_TITLE = "Synchronisation"
+    const val FEATURE_4_DESC = "Vos données sont sauvegardées en toute sécurité. Retrouvez votre budget à tout moment, sur n'importe quel appareil."
+
+    const val STORY_TITLE = "Pourquoi j'ai créé Outgo"
+
+    const val STORY_DESC = "J'ai conçu Outgo au moment où je lançais mon entreprise. Entre les charges professionnelles et personnelles, je voyais les dépenses s'accumuler. En repensant à ma mère qui notait ses dépenses dans un carnet pour maîtriser son budget, j'ai voulu concevoir un outil moderne capable de reproduire cette rigueur avec la simplicité du numérique. Mon but est de vous redonner cette visibilité instantanée sur ce qu'il vous reste réellement à vivre, sans calcul complexe. Un défi stimulant qui met en valeur mes compétences de développeur, tout en restant un outil indispensable à mon quotidien."
 }
 
 object PagePortfolioLabels {

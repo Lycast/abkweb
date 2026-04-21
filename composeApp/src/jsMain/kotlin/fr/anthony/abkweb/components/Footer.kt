@@ -46,7 +46,7 @@ fun FooterComponent(onNavigate: (Page) -> Unit) {
                         Text(FooterLabels.NAV)
                     }
                     FooterInternalLink(CommonLabels.NAV_EXPERTISE, Page.EXPERTISE, onNavigate)
-                    FooterInternalLink(CommonLabels.NAV_FSM, Page.FSM, onNavigate)
+                    FooterInternalLink(CommonLabels.NAV_OUTGO, Page.OUTGO, onNavigate)
                     FooterInternalLink(CommonLabels.NAV_PORTFOLIO, Page.PORTFOLIO, onNavigate)
                     FooterInternalLink(CommonLabels.NAV_CONTACT, Page.CONTACT, onNavigate)
                 }

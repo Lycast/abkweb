@@ -14,13 +14,13 @@ val featureList = listOf(
         listOf("home_kmp_visual.webp")
     ),
 
-    // BLOC 2 : La solution FSM
+    // BLOC 2 : Outgo
     Feature(
-        title = "Solution FSM : Le futur de vos interventions terrain",
-        description = "Fini le papier et les processus déconnectés. Je développe actuellement une solution Field Service Management, pensée pour améliorer l'efficacité opérationnelle sur le terrain.",
-        ctaText = "Voir la roadmap 2027 →",
-        onCtaClick = Page.FSM,
-        listOf("home_logo_fsm.webp")
+        title = "Outgo : Maîtrisez vos finances",
+        description = "Fini les fichiers Excel et l'angoisse des fins de mois. Outgo utilise la méthode des enveloppes pour vous redonner le contrôle de votre argent, de manière simple et visuelle.",
+        ctaText = "Découvrir Outgo →",
+        onCtaClick = Page.OUTGO,
+        listOf("ss_outgo_0.webp")
     ),
 
     // BLOC 3 : L'Humain & Les Projets
