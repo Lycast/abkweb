@@ -10,7 +10,7 @@ object CommonLabels {
     const val NAV_OUTGO = "Projet Outgo"
     const val NAV_PORTFOLIO = "Portfolio"
     const val NAV_CONTACT = "Me contacter"
-    const val NAV_PRIVACY_OUTGO = "Privacy Outgo"
+    const val NAV_PRIVACY_OUTGO = "Politique de Confidentialité - Outgo"
 }
 
 object ButtonLabels {
