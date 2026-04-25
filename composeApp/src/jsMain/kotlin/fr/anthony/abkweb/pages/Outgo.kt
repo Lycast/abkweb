@@ -89,7 +89,7 @@ fun Outgo(onNavigate: (Page) -> Unit) {
                         attr("playsinline", "")
                     }) {
                         Source(attrs = {
-                            attr("src", "/demo_outgo.mp4")
+                            attr("src", "/outgo_demo.mp4")
                             attr("type", "video/mp4")
                         })
                         Text("Votre navigateur ne supporte pas la lecture de vidéos.")

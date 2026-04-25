@@ -16,7 +16,7 @@ val myProjectsList = listOf(
         techStack = "\n**Stack Technique & Architecture**\n" +
                 "Kotlin Multiplatform (KMP), Jetpack Compose (Android), SwiftUI (iOS), SQLDelight (Local), PostgreSQL (Cloud), Ktor (Backend Serverless), Koin, Coroutines/Flow, Firebase Auth",
         githubUrl = "https://github.com/Lycast/Outgo",
-        images = listOf("ss_outgo_0.webp", "ss_outgo_00.webp", "ss_outgo_01.webp", "ss_outgo_02.webp", "ss_outgo_03.webp", "ss_outgo_04.webp")
+        images = listOf("ss_outgo_00.webp", "ss_outgo_01.webp", "ss_outgo_02.webp", "ss_outgo_03.webp", "ss_outgo_04.webp", "ss_outgo_05.webp")
     ),
 
     Project(
