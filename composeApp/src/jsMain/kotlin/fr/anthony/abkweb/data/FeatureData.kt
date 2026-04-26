@@ -17,7 +17,7 @@ val featureList = listOf(
     // BLOC 2 : Outgo
     Feature(
         title = "Outgo : Maîtrisez vos finances",
-        description = "Fini les fichiers Excel et l'angoisse des fins de mois. Outgo utilise la méthode des enveloppes pour vous redonner le contrôle de votre argent, de manière simple et visuelle.",
+        description = "Dites adieu aux fichiers Excel et à l'angoisse des fins de mois. Avec Outgo, reprenez le contrôle de votre budget grâce à la méthode des enveloppes. Simple, visuel et 100% gratuit.",
         ctaText = "Découvrir Outgo →",
         onCtaClick = Page.OUTGO,
         listOf("ss_outgo_00.webp")

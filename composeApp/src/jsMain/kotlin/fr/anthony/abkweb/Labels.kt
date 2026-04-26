@@ -65,7 +65,7 @@ object PageOutgoLabels {
     const val CTA_DOWNLOAD = "Bientôt sur les Stores"
 
     const val FEATURE_1_TITLE = "L'enveloppe"
-    const val FEATURE_1_DESC = "Le suivi mensuel instantané. Définissez votre budget, vos charges fixes et suivez-les en temps réel."
+    const val FEATURE_1_DESC = "Le suivi mensuel instantané. Définissez votre budget, anticipez vos dépenses prévisibles et suivez-les en temps réel."
 
     const val FEATURE_2_TITLE = "Simplicité"
     const val FEATURE_2_DESC = "Aucune catégorie complexe. Juste l'essentiel pour savoir instantanément où vous en êtes."
@@ -78,7 +78,9 @@ object PageOutgoLabels {
 
     const val STORY_TITLE = "Pourquoi j'ai créé Outgo"
 
-    const val STORY_DESC = "J'ai conçu Outgo au moment où je lançais mon entreprise. Entre les charges professionnelles et personnelles, je voyais les dépenses s'accumuler. En repensant à ma mère qui notait ses dépenses dans un carnet pour maîtriser son budget, j'ai voulu concevoir un outil moderne capable de reproduire cette rigueur avec la simplicité du numérique. Mon but est de vous redonner cette visibilité instantanée sur ce qu'il vous reste réellement à vivre, sans calcul complexe. Un défi stimulant qui met en valeur mes compétences de développeur, tout en restant un outil indispensable à mon quotidien."
+    const val STORY_DESC = "J’ai conçu Outgo au lancement de mon entreprise, quand les dépenses pro et perso commençaient à s’accumuler dangereusement.\n" +
+            "En repensant à ma mère qui notait tout dans un carnet pour tenir son budget, j'ai voulu créer un outil moderne capable de retrouver cette rigueur avec la simplicité du numérique. Mon but est simple : vous donner une visibilité instantanée sur ce qu'il vous reste réellement pour vivre, sans calcul complexe.\n" +
+            "C'est l'outil que j'utilise aujourd'hui pour ma propre sérénité, et j'espère qu'il vous sera tout aussi indispensable."
 }
 
 object PagePortfolioLabels {
@@ -120,7 +122,6 @@ object PrivacyOutgoLabels {
     const val DATA_INTRO = "Outgo a été conçue avec une philosophie \"Offline-First\" pour minimiser la collecte de données. Cependant, pour assurer le fonctionnement de la synchronisation entre vos appareils, nous collectons certains types d'informations :"
     val DATA_POINTS = listOf(
         "Données d'authentification" to "Lors de la création d'un compte, nous utilisons des services tiers (Firebase Authentication) pour sécuriser votre connexion. Cela peut inclure votre adresse e-mail ou votre identifiant d'authentification (Google/Apple).",
-        // Modification : "Données financières" remplacé par "Saisies budgétaires" + précision sur la valeur légale
         "Saisies budgétaires" to "Vos saisies budgétaires (montants, catégories) sont stockées localement sur votre appareil. Ces informations, saisies manuellement, n'ont aucune valeur légale. Si vous utilisez la synchronisation, ces données sont chiffrées en transit et stockées de manière sécurisée sur nos serveurs. Nous ne vendons, ni n'analysons vos données."
     )
 
@@ -128,7 +129,6 @@ object PrivacyOutgoLabels {
     const val TIER_INTRO = "Nous utilisons des services tiers pour faciliter notre service ou analyser son utilisation. Ces tiers n'ont accès à vos données que pour ces tâches spécifiques :"
     val TIER_POINTS = listOf(
         "Firebase Authentication" to "Pour la gestion sécurisée de vos identifiants.",
-        // Modification : "donnée financière" remplacé par "donnée budgétaire"
         "Sentry" to "Pour le suivi technique des crashs (données techniques uniquement, aucune donnée budgétaire ou personnelle)."
     )
 

@@ -46,6 +46,9 @@ fun BodyText(
 ) {
     P({
         classes(*AppTypography.body, *AppColors.textSecondary, *extraClasses, *AppColors.themeTransition)
+        style {
+            property("white-space", "pre-line")
+        }
     }) {
         content()
     }
