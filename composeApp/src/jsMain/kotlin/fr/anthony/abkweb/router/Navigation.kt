@@ -27,5 +27,13 @@ fun PageRouter(currentPage: Page, onNavigate: (Page) -> Unit) {
 }
 
 fun parsePageFromUrl(path: String): Page {
-    return Page.entries.find { it.route == path } ?: Page.HOME
+    val normalizedPath = path
+        .removePrefix("/")
+        .removeSuffix(".html")
+        .removeSuffix("/")
+
+    return Page.entries.find {
+        val routeClean = it.route.removePrefix("/").removeSuffix("/")
+        routeClean == normalizedPath
+    } ?: Page.HOME
 }

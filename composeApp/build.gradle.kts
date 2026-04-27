@@ -41,14 +41,18 @@ tasks.register("prepareGitHubPages") {
         val indexFile = File(distDir, "index.html")
         val fallbackFile = File(distDir, "404.html")
         val cnameFile = File(distDir, "CNAME")
+        val privacyFile = File(distDir, "privacy-outgo.html")
 
         if (indexFile.exists()) {
             indexFile.copyTo(fallbackFile, overwrite = true)
+
             cnameFile.writeText("abknative.fr")
 
             println("[Build] Préparation GitHub Pages terminée :")
             println("- 404.html généré")
             println("- CNAME généré pour abknative.fr")
+
+            if (privacyFile.exists()) { println("- privacy-outgo.html est bien présent à la racine.") }
         } else {
             println("[Build] index.html introuvable dans : ${distDir.absolutePath}")
         }
