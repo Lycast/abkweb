@@ -1,9 +1,9 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.CommonLabels
-import fr.anthony.abkweb.FooterLabels
-import fr.anthony.abkweb.UrlLabels
+import fr.anthony.abkweb.data.CommonLabels
+import fr.anthony.abkweb.data.FooterLabels
+import fr.anthony.abkweb.data.UrlLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing

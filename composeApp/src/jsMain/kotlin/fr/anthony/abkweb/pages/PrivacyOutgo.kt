@@ -1,7 +1,7 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.PrivacyOutgoLabels
+import fr.anthony.abkweb.data.PrivacyOutgoLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.*

@@ -1,7 +1,7 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.PageMentionsLabels
+import fr.anthony.abkweb.data.PageMentionsLabels
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H2

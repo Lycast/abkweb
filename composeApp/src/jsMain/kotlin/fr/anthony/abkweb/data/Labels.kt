@@ -1,4 +1,4 @@
-package fr.anthony.abkweb
+package fr.anthony.abkweb.data
 
 object CommonLabels {
     const val ABK_NATIVE = "ABK Native"

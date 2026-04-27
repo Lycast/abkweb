@@ -22,7 +22,6 @@ fun main() {
 
         var currentPage by remember { mutableStateOf(parsePageFromUrl(window.location.pathname)) }
 
-        // Gestion du bouton Précédent/Suivant du navigateur (PopState)
         DisposableEffect(Unit) {
             val onPopState = { _: Any ->
                 currentPage = parsePageFromUrl(window.location.pathname)
@@ -41,16 +40,13 @@ fun main() {
             }
         }
 
-        // LE SQUELETTE DE L'APPLICATION
         Div({ classes("min-h-screen", "flex", "flex-col", "w-full", *AppColors.bgMain, *AppColors.themeTransition) }) {
 
-            // 1. LE HEADER FIXE
             HeaderComponent(
                 currentPage = currentPage,
                 onNavigate = navigateTo
             )
 
-            // 2. ZONE DU BOUTON
             Div({
                 classes(
                     "container", "mx-auto", "px-6", "flex", "justify-end",
@@ -62,7 +58,6 @@ fun main() {
                 }
             }
 
-            // 3. LE CONTENEUR PRINCIPAL
             Main({ classes("flex-grow", "w-full", "flex", "flex-col") }) {
                 PageRouter(
                     currentPage = currentPage,
@@ -70,7 +65,6 @@ fun main() {
                 )
             }
 
-            // 4. LE FOOTER
             FooterComponent(onNavigate = navigateTo)
         }
     }

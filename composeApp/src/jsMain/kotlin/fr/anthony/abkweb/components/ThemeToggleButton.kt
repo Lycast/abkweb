@@ -1,7 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.ButtonLabels
+import fr.anthony.abkweb.data.ButtonLabels
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.ThemeManager
 import org.jetbrains.compose.web.dom.Button

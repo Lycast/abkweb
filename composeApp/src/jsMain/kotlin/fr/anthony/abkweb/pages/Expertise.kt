@@ -1,8 +1,8 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.PageExpertiseLabels
 import fr.anthony.abkweb.components.SecondaryButton
+import fr.anthony.abkweb.data.PageExpertiseLabels
 import fr.anthony.abkweb.data.expertise
 import fr.anthony.abkweb.data.techBadgeList
 import fr.anthony.abkweb.router.Page

@@ -1,10 +1,10 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.*
-import fr.anthony.abkweb.PageOutgoLabels
 import fr.anthony.abkweb.components.ImagesCarousel
 import fr.anthony.abkweb.components.LightboxModal
 import fr.anthony.abkweb.components.PrimaryButton
+import fr.anthony.abkweb.data.PageOutgoLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.attributes.alt

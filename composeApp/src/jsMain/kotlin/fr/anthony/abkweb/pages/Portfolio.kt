@@ -1,8 +1,8 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.*
-import fr.anthony.abkweb.PagePortfolioLabels
 import fr.anthony.abkweb.components.*
+import fr.anthony.abkweb.data.PagePortfolioLabels
 import fr.anthony.abkweb.data.myProjectsList
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.AppSpacing

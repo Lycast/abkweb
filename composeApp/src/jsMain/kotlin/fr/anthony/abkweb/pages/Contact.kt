@@ -1,8 +1,8 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.PageContactLabels
 import fr.anthony.abkweb.components.ContactCard
+import fr.anthony.abkweb.data.PageContactLabels
 import fr.anthony.abkweb.data.contacts
 import fr.anthony.abkweb.theme.*
 import org.jetbrains.compose.web.dom.Div

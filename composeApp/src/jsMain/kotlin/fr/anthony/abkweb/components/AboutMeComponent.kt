@@ -1,8 +1,8 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.*
-import fr.anthony.abkweb.AboutMeComponentLabels
-import fr.anthony.abkweb.CommonLabels
+import fr.anthony.abkweb.data.AboutMeComponentLabels
+import fr.anthony.abkweb.data.CommonLabels
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.H3Custom
 import org.jetbrains.compose.web.dom.Button

@@ -1,10 +1,10 @@
 package fr.anthony.abkweb.pages
 
 import androidx.compose.runtime.*
-import fr.anthony.abkweb.PageHomeLabels
 import fr.anthony.abkweb.components.FeatureBlock
 import fr.anthony.abkweb.components.ImagesCarousel
 import fr.anthony.abkweb.components.LightboxModal
+import fr.anthony.abkweb.data.PageHomeLabels
 import fr.anthony.abkweb.data.featureList
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*

@@ -1,7 +1,7 @@
 package fr.anthony.abkweb.components
 
 import androidx.compose.runtime.Composable
-import fr.anthony.abkweb.CommonLabels
+import fr.anthony.abkweb.data.CommonLabels
 import fr.anthony.abkweb.model.Project
 import fr.anthony.abkweb.theme.AppColors
 import fr.anthony.abkweb.theme.BodyText
