@@ -23,7 +23,8 @@ fun Outgo(onNavigate: (Page) -> Unit) {
         "/ss_outgo_01.webp",
         "/ss_outgo_02.webp",
         "/ss_outgo_03.webp",
-        "/ss_outgo_04.webp"
+        "/ss_outgo_04.webp",
+        "/ss_outgo_05.webp"
     )
 
     Div({ classes("flex-grow", "w-full", "flex", "flex-col") }) {
