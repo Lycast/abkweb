@@ -62,7 +62,7 @@ object PageOutgoLabels {
     const val TITLE_B = "Outgo."
     const val DESCRIPTION = "Outgo automatise la gestion de votre budget. Simplicité et zéro calcul complexe."
 
-    const val CTA_DOWNLOAD = "Bientôt sur les Stores"
+    const val CTA_DOWNLOAD = "Déjà disponible sur Google Play"
 
     const val FEATURE_1_TITLE = "L'enveloppe"
     const val FEATURE_1_DESC = "Le suivi mensuel instantané. Définissez votre budget, anticipez vos dépenses prévisibles et suivez-les en temps réel."
@@ -73,8 +73,8 @@ object PageOutgoLabels {
     const val FEATURE_3_TITLE = "Le Prévisionnel"
     const val FEATURE_3_DESC = "Anticipez vos fins de mois et projetez-vous en un coup d'œil."
 
-    const val FEATURE_4_TITLE = "Synchronisation"
-    const val FEATURE_4_DESC = "Vos données sont sauvegardées en toute sécurité. Retrouvez votre budget à tout moment, sur n'importe quel appareil."
+    const val FEATURE_4_TITLE = "Offline-First & Sécurisé"
+    const val FEATURE_4_DESC = "Vos données budgétaires vous appartiennent. Gérez vos finances sans connexion internet, avec une synchronisation cloud chiffrée et totalement optionnelle."
 
     const val STORY_TITLE = "Pourquoi j'ai créé Outgo"
 

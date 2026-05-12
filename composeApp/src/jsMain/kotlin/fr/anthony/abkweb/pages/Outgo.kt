@@ -7,6 +7,7 @@ import fr.anthony.abkweb.components.PrimaryButton
 import fr.anthony.abkweb.data.PageOutgoLabels
 import fr.anthony.abkweb.router.Page
 import fr.anthony.abkweb.theme.*
+import kotlinx.browser.window
 import org.jetbrains.compose.web.attributes.alt
 import org.jetbrains.compose.web.dom.*
 
@@ -55,7 +56,7 @@ fun Outgo(onNavigate: (Page) -> Unit) {
 
                     // Bouton Télécharger
                     PrimaryButton(PageOutgoLabels.CTA_DOWNLOAD) {
-                        // TODO: Ajouter le lien vers le Play Store ici plus tard via window.open()
+                        window.open("https://play.google.com/store/apps/details?id=fr.abknative.outgo", "_blank")
                     }
                 }
 
